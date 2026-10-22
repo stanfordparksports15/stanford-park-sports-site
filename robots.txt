@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /tools/
+Disallow: /flyer/
+Disallow: /options.html
+Disallow: /hero-options.html
+Sitemap: https://www.stanfordparksports.com/sitemap.xml

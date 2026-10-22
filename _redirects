@@ -1,0 +1,10 @@
+# Old Wix addresses -> new pages (301 keeps Google rankings)
+/about-us            /about.html          301
+/schools             /schools.html        301
+/contact             /contact.html        301
+/current-programs    /programs.html       301
+/donate              /donate.html         301
+/donate-spsf         /donate.html         301
+/get-involved        /get-involved.html   301
+# Registration pages still live on Wix (free Wix URL)
+/reg-*               https://REPLACE-WITH-WIX-FREE-URL/reg-:splat   301
