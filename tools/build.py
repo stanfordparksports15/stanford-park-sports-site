@@ -76,9 +76,9 @@ def img(n, alt, sizes="(max-width: 960px) 100vw, 50vw", eager=False, cls="", ext
 # ---------------------------------------------------------------- data
 DONATE_URL = "https://donorbox.org/stanford-park-sports-foundation"
 EIN = "33-2148759"
-SITE_URL = "https://www.stanfordparksports.com"
+SITE_URL = "https://www.stanfordparksports.org"
 # Where the Wix registration pages live after the domain moves (Petr's free Wix URL, no trailing slash)
-REG_BASE = "https://REPLACE-WITH-WIX-FREE-URL"
+REG_BASE = "https://www.stanfordparksports.com"
 EMAIL = "info@stanfordparksports.com"
 PHONE_DISPLAY = "(650) 785-9029"
 PHONE_TEL = "+16507859029"
@@ -1115,15 +1115,20 @@ def favicon():
 # ---------------------------------------------------------------- launch files
 def launch_files():
     pages = ["", "about.html", "programs.html", "schools.html", "get-involved.html", "donate.html", "contact.html"]
-    redirects = f"""# Old Wix addresses -> new pages (301 keeps Google rankings)
+    redirects = f"""# Old Wix addresses (.org Foundation site + .com site) -> new pages (301 keeps Google rankings)
 /about-us            /about.html          301
+/coach               /get-involved.html#coach       301
+/copy-of-coach       /get-involved.html#volunteer   301
+/copy-of-coach-1     /get-involved.html#supporter   301
+/copy-of-supporter   /schools.html        301
+/contact-8           /contact.html        301
 /schools             /schools.html        301
 /contact             /contact.html        301
 /current-programs    /programs.html       301
 /donate              /donate.html         301
 /donate-spsf         /donate.html         301
 /get-involved        /get-involved.html   301
-# Registration pages still live on Wix (free Wix URL)
+# Registration pages stay on the Wix site at stanfordparksports.com
 /reg-*               {REG_BASE}/reg-:splat   301
 """
     robots = f"""User-agent: *
