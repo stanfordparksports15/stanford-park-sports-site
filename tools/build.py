@@ -764,7 +764,7 @@ def programs():
           <div><dt>{icon("pin")}<span class="sr-only">Location</span></dt><dd>{loc}</dd></div>
         </dl>
         {n}
-        <a class="btn btn--sm" href="{REG_BASE}/{slug}" target="_blank" rel="noopener">Register <span class="sr-only">for {school} {sport.replace("&amp;", "and")}</span>{ARROW}</a>
+        <a class="btn btn--sm" href="contact.html?role=Parent#form-title">Register <span class="sr-only">for {school} {sport.replace("&amp;", "and")}</span>{ARROW}</a>
       </article>'''
     body = f'''<main id="main">
 {page_hero("Programs", [("Find your", False), ("school", True)],
@@ -1128,8 +1128,8 @@ def launch_files():
 /donate              /donate.html         301
 /donate-spsf         /donate.html         301
 /get-involved        /get-involved.html   301
-# Registration pages stay on the Wix site at stanfordparksports.com
-/reg-*               {REG_BASE}/reg-:splat   301
+# Old Wix registration links -> contact page until online registration launches
+/reg-*               /contact.html?role=Parent   302
 """
     robots = f"""User-agent: *
 Disallow: /tools/

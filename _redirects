@@ -11,5 +11,5 @@
 /donate              /donate.html         301
 /donate-spsf         /donate.html         301
 /get-involved        /get-involved.html   301
-# Registration pages stay on the Wix site at stanfordparksports.com
-/reg-*               https://www.stanfordparksports.com/reg-:splat   301
+# Old Wix registration links -> contact page until online registration launches
+/reg-*               /contact.html?role=Parent   302
