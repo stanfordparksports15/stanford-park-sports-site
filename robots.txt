@@ -3,4 +3,4 @@ Disallow: /tools/
 Disallow: /flyer/
 Disallow: /options.html
 Disallow: /hero-options.html
-Sitemap: https://www.stanfordparksports.org/sitemap.xml
+Sitemap: https://www.stanfordparksports.com/sitemap.xml

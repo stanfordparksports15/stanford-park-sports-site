@@ -76,7 +76,7 @@ def img(n, alt, sizes="(max-width: 960px) 100vw, 50vw", eager=False, cls="", ext
 # ---------------------------------------------------------------- data
 DONATE_URL = "https://donorbox.org/stanford-park-sports-foundation"
 EIN = "33-2148759"
-SITE_URL = "https://www.stanfordparksports.org"
+SITE_URL = "https://www.stanfordparksports.com"
 # Where the Wix registration pages live after the domain moves (Petr's free Wix URL, no trailing slash)
 REG_BASE = "https://www.stanfordparksports.com"
 EMAIL = "info@stanfordparksports.com"
