@@ -94,7 +94,7 @@ body {{ background: var(--cream); color: var(--ink); font-family: Figtree, sans-
   <div class="sports"><strong>Sports</strong><span>{sports} · and more</span></div>
 
   <div class="foot">
-    <span>stanfordparksports.com</span>
+    <span>stanfordparksports.org</span>
     <div class="c"><span>{b.icon("mail")} info@stanfordparksports.com</span><span>{b.icon("phone")} (650) 785-9029</span></div>
   </div>
 </section>

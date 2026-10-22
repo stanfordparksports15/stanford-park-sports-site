@@ -114,10 +114,10 @@ body {{ background: var(--cream); color: var(--ink); font-family: Figtree, sans-
 <section class="cta">
   <div>
     <h2 class="display">Ready to <span>cheer?</span></h2>
-    <p>Spots are limited. Ask your school about our cheer program or register online at stanfordparksports.com.</p>
+    <p>Spots are limited. Ask your school about our cheer program or register online at stanfordparksports.org.</p>
   </div>
   <ul class="contact">
-    <li>{b.icon("external")} stanfordparksports.com</li>
+    <li>{b.icon("external")} stanfordparksports.org</li>
     <li>{b.icon("mail")} info@stanfordparksports.com</li>
     <li>{b.icon("phone")} (650) 785-9029</li>
   </ul>

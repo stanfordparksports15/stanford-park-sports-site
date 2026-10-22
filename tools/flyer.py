@@ -129,7 +129,7 @@ body {{ background: var(--cream); color: var(--ink); font-family: Figtree, sans-
   <ul class="contact">
     <li>{b.icon("mail")} info@stanfordparksports.com</li>
     <li>{b.icon("phone")} (650) 785-9029</li>
-    <li>{b.icon("external")} stanfordparksports.com</li>
+    <li>{b.icon("external")} stanfordparksports.org</li>
   </ul>
 </section>
 <div class="tag"><span>Stanford Park Sports Foundation · 501(c)(3) · EIN 33-2148759</span><strong>We do more than coach. We build character.</strong></div>
