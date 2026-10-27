@@ -1,3 +1,4 @@
 .DS_Store
 __pycache__/
 tools/build.bak*.py
+tools/*.bak.py

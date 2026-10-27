@@ -1,0 +1,133 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<title>Stanford Park Sports Volleyball at Bentley School: Program Overview</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --maroon:#8e1316; --maroon-900:#3f0809; --cream:#fbf5ec; --paper:#fffdf9; --ink:#1d1213; --ink-2:#4a3b3b; --line:#e7dac8; --blush:#f6e3de; --pink:#f6b3ac; --hl:#ffe9a8; }
+html, body { width: 210mm; height: 297mm; }
+body { background: var(--cream); color: var(--ink); font-family: Figtree, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 210mm; height: 297mm; display: flex; flex-direction: column; overflow: hidden; }
+.page > * { flex: none; }
+.display { font-family: Anton, Impact, sans-serif; text-transform: uppercase; font-weight: 400; line-height: .92; }
+.eyebrow { display: inline-flex; align-items: center; gap: 2mm; color: var(--maroon); font-weight: 800; font-size: 7.5pt; letter-spacing: .16em; text-transform: uppercase; }
+.ph { background: var(--hl); color: var(--ink); border-radius: 1mm; padding: 0 1.4mm; font-weight: 800; }
+
+.hero { position: relative; height: 70mm; overflow: hidden; color: var(--cream); }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(63,8,9,.96) 0%, rgba(63,8,9,.86) 45%, rgba(63,8,9,.25) 78%, rgba(63,8,9,.1) 100%); }
+.hero__in { position: relative; z-index: 1; height: 100%; padding: 9mm 12mm 8mm; display: flex; flex-direction: column; }
+.top { display: flex; justify-content: space-between; align-items: flex-start; }
+.logo { background: var(--cream); border-radius: 3mm; padding: 2mm 3.2mm; }
+.logo img { height: 11mm; display: block; }
+.school { background: var(--cream); color: var(--maroon); border-radius: 2mm; padding: 2mm 3.2mm; text-align: right; }
+.school b { display: block; font-family: Anton, Impact, sans-serif; font-weight: 400; text-transform: uppercase; font-size: 13pt; line-height: 1; }
+.school span { font-size: 7.6pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.kick { margin-top: auto; font-weight: 800; font-size: 8.4pt; letter-spacing: .14em; text-transform: uppercase; color: var(--pink); }
+.hero h1 { margin-top: 2mm; font-size: 58pt; font-style: italic; transform: skewX(-7deg); transform-origin: left; display: flex; align-items: center; gap: 4mm; }
+.hero h1 svg { width: 15mm; height: 15mm; transform: skewX(7deg); }
+.hero .tag { margin-top: 2.5mm; display: flex; gap: 2.5mm; align-items: center; }
+.pill { background: var(--cream); color: var(--maroon); font-weight: 800; font-size: 9pt; padding: 1.4mm 3mm; border-radius: 1.6mm; letter-spacing: .04em; }
+.hero .tagline { font-size: 11pt; font-weight: 700; color: #f6e4e0; }
+
+.body { padding: 6mm 12mm 0; display: grid; grid-template-columns: 1.15fr 1fr; gap: 6mm; }
+.intro { font-size: 10pt; line-height: 1.5; color: var(--ink-2); }
+h2 { font-size: 17pt; margin: 1.5mm 0 3mm; }
+h2 span { color: var(--maroon); }
+.learn { display: grid; gap: 2.2mm; margin-top: 4mm; }
+.lc { display: flex; gap: 2.8mm; align-items: flex-start; background: var(--paper); border: .35mm solid var(--line); border-radius: 2.4mm; padding: 2.6mm 3mm; }
+.lc__ic { width: 8.5mm; height: 8.5mm; flex: none; border-radius: 2mm; background: var(--maroon); color: var(--cream); display: grid; place-items: center; }
+.lc__ic svg { width: 5mm; height: 5mm; }
+.lc h3 { font-family: Anton, Impact, sans-serif; font-weight: 400; text-transform: uppercase; font-size: 11.5pt; line-height: 1; }
+.lc p { margin-top: 1mm; font-size: 8.2pt; line-height: 1.35; color: var(--ink-2); }
+
+.details { background: var(--paper); border: .5mm solid var(--maroon); box-shadow: 1.4mm 1.4mm 0 var(--maroon); border-radius: 3mm; padding: 4mm 4.4mm; }
+.details dl { display: grid; gap: 2.2mm; margin-top: 1mm; }
+.details dl div { display: grid; grid-template-columns: 6mm 1fr; gap: 2.4mm; align-items: start; font-size: 9.4pt; }
+.details dt svg { width: 5mm; height: 5mm; color: var(--maroon); }
+.details dd b { display: block; font-size: 7pt; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+.details dd { font-weight: 700; line-height: 1.35; }
+
+.rain { margin-top: 5mm; background: var(--blush); border-radius: 3mm; padding: 4mm 4.4mm; }
+.rain h3 { font-family: Anton, Impact, sans-serif; font-weight: 400; text-transform: uppercase; font-size: 14pt; display: flex; align-items: center; gap: 2mm; color: var(--maroon); }
+.rain h3 svg { width: 6mm; height: 6mm; }
+.rain p { margin-top: 2mm; font-size: 8.6pt; line-height: 1.45; color: var(--ink-2); }
+.rain ul { list-style: none; margin-top: 2.4mm; display: grid; gap: 1.6mm; }
+.rain li { display: flex; gap: 2mm; align-items: flex-start; font-size: 8.8pt; font-weight: 700; }
+.rain li svg { width: 4mm; height: 4mm; color: var(--maroon); flex: none; margin-top: .4mm; }
+
+.why2 { margin: 5mm 12mm 6mm; display: flex; gap: 3mm; align-items: center; background: var(--paper); border: .35mm solid var(--line); border-radius: 2.4mm; padding: 3.4mm 4mm; font-size: 9.4pt; line-height: 1.45; color: var(--ink-2); }
+.why2 svg { width: 7mm; height: 7mm; color: var(--maroon); flex: none; }
+.why2 b { color: var(--ink); }
+.why { padding: 5mm 12mm 6mm; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.6mm; }
+.why div { display: flex; flex-direction: column; gap: 1.4mm; background: var(--paper); border: .35mm solid var(--line); border-radius: 2.4mm; padding: 3mm; font-size: 8.4pt; font-weight: 700; line-height: 1.3; }
+.why svg { width: 6mm; height: 6mm; color: var(--maroon); }
+
+.cta { margin-top: auto; background: var(--maroon); color: var(--cream); padding: 6mm 12mm 5.5mm; display: grid; grid-template-columns: 1.2fr 1fr; gap: 6mm; align-items: center; }
+.cta h2 { font-size: 22pt; margin: 0; }
+.cta h2 span { color: var(--pink); }
+.cta .reg { margin-top: 2.6mm; font-size: 10pt; font-weight: 700; }
+.cta .reg .ph { font-size: 10pt; }
+.contact { list-style: none; display: grid; gap: 1.8mm; }
+.contact li { display: flex; align-items: center; gap: 2.4mm; font-weight: 700; font-size: 9.6pt; }
+.contact svg { width: 4.6mm; height: 4.6mm; flex: none; }
+.foot { background: var(--maroon-900); padding: 2.6mm 12mm; display: flex; justify-content: space-between; align-items: center; font-size: 6.8pt; color: #e8c9c4; }
+.foot strong { font-family: Anton, Impact, sans-serif; font-weight: 400; font-style: italic; font-size: 11pt; text-transform: uppercase; color: var(--cream); }
+.hero > img { object-position: 50% 35%; }</style></head>
+<body><div class="page">
+
+<section class="hero">
+  <img src="../assets/img/pi3476-1600.webp" alt="">
+  <div class="hero__in">
+    <div class="top">
+      <div class="logo"><img src="../assets/img/logo.png" alt="Stanford Park Youth Sports"></div>
+      <div class="school"><b>Bentley School</b><span>Oakland</span></div>
+    </div>
+    <span class="kick">Program overview · Winter Trimester 2026/2027</span>
+    <h1 class="display">Volleyball <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M11.1 7.1a16.5 16.5 0 0 1 10.9 4"/><path d="M12 12a12.6 12.6 0 0 1-8.7 5"/><path d="M16.8 13.6a16.5 16.5 0 0 1-9 7.5"/><path d="M20.7 17a12.8 12.8 0 0 0-8.7-5 13.3 13.3 0 0 1 0-10"/><path d="M6.3 3.8a16.5 16.5 0 0 0 1.9 11.5"/></svg></h1>
+    <div class="tag"><span class="pill">Grades 3 to 5</span><span class="tagline">Bumps, sets, serves and a whole lot of fun!</span></div>
+  </div>
+</section>
+
+<section class="body">
+  <div>
+    <span class="eyebrow">For the Bentley School team</span>
+    <p class="intro" style="margin-top:2mm">Bentley families asked for volleyball, so this winter we are bringing an after school volleyball program to students in grades 3 to 5. Our coaches teach real volleyball skills in a fun, encouraging way, and students build confidence and teamwork every week.</p>
+    <h2 class="display" style="margin-top:4.5mm">What students <span>will learn</span></h2>
+    <div class="learn" style="margin-top:0"><div class="lc"><span class="lc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M11.1 7.1a16.5 16.5 0 0 1 10.9 4"/><path d="M12 12a12.6 12.6 0 0 1-8.7 5"/><path d="M16.8 13.6a16.5 16.5 0 0 1-9 7.5"/><path d="M20.7 17a12.8 12.8 0 0 0-8.7-5 13.3 13.3 0 0 1 0-10"/><path d="M6.3 3.8a16.5 16.5 0 0 0 1.9 11.5"/></svg></span><div><h3>Passing &amp; setting</h3><p>Bumps and sets with good form, so the ball goes where they want it to.</p></div></div><div class="lc"><span class="lc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></span><div><h3>Serving</h3><p>Underhand serves first, then building up as skills and confidence grow.</p></div></div><div class="lc"><span class="lc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="14" r="8"/><path d="M12 14l3-3M10 2h4M12 2v4M19 6l1.5-1.5"/></svg></span><div><h3>Footwork</h3><p>Ready position, quick feet and moving to the ball.</p></div></div><div class="lc"><span class="lc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span><div><h3>Teamwork</h3><p>Calling the ball, cheering on teammates and playing real games.</p></div></div></div>
+  </div>
+  <div>
+    <div class="details">
+      <span class="eyebrow">Program at a glance</span>
+      <dl>
+        <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></dt><dd><b>Who</b>Students in grades 3 to 5. This program was requested by Bentley families in these grades.</dd></div>
+        <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></dt><dd><b>When</b>Tuesdays after school, Winter Trimester 2026/2027</dd></div>
+        <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></dt><dd><b>Where</b>Outdoors on campus when weather allows, in a classroom on rainy days</dd></div>
+        <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg></dt><dd><b>Equipment</b>All equipment provided by Stanford Park Sports</dd></div>
+        <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></dt><dd><b>Coaches</b>Trained, background checked Stanford Park Sports coaches</dd></div>
+      </dl>
+    </div>
+    <div class="rain">
+      <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 16.6A5 5 0 0 0 18 7h-1.3A8 8 0 1 0 4 15.3"/><path d="M16 14v6M8 14v6M12 16v6"/></svg> Rainy day plan</h3>
+      <p>Volleyball is a low maintenance sport that works great in a classroom with just a little open space. On wet days the class moves indoors, and no net is needed:</p>
+      <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Passing with soft volleyballs</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Volleyball trivia</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Fun team games that fit the room</span></li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="why2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 22v-4a2 2 0 1 0-4 0v4"/><path d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2"/><path d="M18 5v17M6 5v17"/><path d="m4 6 8-4 8 4"/><circle cx="12" cy="9" r="2"/></svg><span>Stanford Park Sports runs fun, safe, skill focused programs at <b>50+ Bay Area schools</b>. Students build skills, confidence and teamwork every week.</span></section>
+
+<section class="cta">
+  <div>
+    <h2 class="display">Questions? <span>Contact us.</span></h2>
+    <p class="reg">Reach out anytime and we will be happy to share more about the program.</p>
+  </div>
+  <ul class="contact">
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> stanfordparksports.com</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> info@stanfordparksports.com</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> (650) 785 9029</li>
+  </ul>
+</section>
+<div class="foot"><span>Stanford Park Sports · Bay Area school sports since 2021</span><strong>We do more than coach. We build character.</strong></div>
+
+</div></body></html>
