@@ -781,8 +781,6 @@ def programs():
     cards = ""
     for school, k, sport, day, dates, time, loc, note, price, reg in PROGRAMS:
         n = f'<p class="note">{note}</p>' if note else ""
-        pay = STRIPE_LINKS.get(reg)
-        pay_html = (f'<a class="program__pay" href="{pay}" target="_blank" rel="noopener">Already registered? Pay {price} online <span class="sr-only">for {school} {sport}</span>{ARROW}</a>' if pay else "")
         if reg.startswith("http"):
             reg_attrs = f'href="{reg}" target="_blank" rel="noopener"'
         else:
@@ -797,7 +795,6 @@ def programs():
         </dl>
         {n}
         <a class="btn btn--sm" {reg_attrs}>Register <span class="sr-only">for {school} {sport.replace("&amp;", "and")}</span>{ARROW}</a>
-        {pay_html}
       </article>'''
     body = f'''<main id="main">
 <section class="section programs-top" aria-labelledby="programs-title">
