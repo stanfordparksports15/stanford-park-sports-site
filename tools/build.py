@@ -747,7 +747,7 @@ def about():
 # ================================================================= PROGRAMS
 PROGRAM_LOGOS = {"Addison Elementary": "school-25", "Lakeside": "school-27", "San Miguel": "school-15",
                  "Ponderosa": "school-11", "Bowman": "school-05", "Gabriela Mistral": "school-19",
-                 "North Star Academy": "school-northstar"}
+                 "North Star Academy": "school-northstar", "Brittan Acres": "school-brittanacres"}
 
 
 def program_logo(school):
