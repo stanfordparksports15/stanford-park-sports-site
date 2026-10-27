@@ -125,8 +125,10 @@ LOGOS = [("01", "Taft Community School"), ("02", "Synapse School"), ("03", "Sili
 # Stripe payment links (paste the links here when created; empty = Register goes to the contact page)
 WHITE_OAKS_SOCCER_PAY = ""
 WHITE_OAKS_BASKETBALL_PAY = ""
+NORTH_STAR_FLAG_PAY = ""
 
 PROGRAMS = [  # (school, sport key, sport, day, dates, time, location, note, price, registration form URL or "")
+    ("North Star Academy", "football", "Flag Football · Winter", "Mondays", "Dec 7 – Feb 22", "3:15 – 4:15 PM", "Field", "Co-ed · Grades 3 to 5 · 7 classes: 12/7, 12/14, 1/11, 1/25, 2/1, 2/8, 2/22", "$320", NORTH_STAR_FLAG_PAY),
     ("Brittan Acres", "cheer", "Cheerleading", "Fridays", "Nov 6 – Jan 29", "2:35 – 3:35 PM", "Multi-purpose room", "No class 11/27, 12/18, 12/24, 12/31", "", "https://form.fillout.com/t/v3YKqY7rZZus"),
     ("North Star Academy", "run", "Run Club / Track &amp; Field", "Mondays", "Aug 24 – Nov 9", "3:10 – 4:10 PM", "Grass field", "No class 9/7, 9/28, 10/12", "$360", "reg-north-star-run-club"),
     ("Addison Elementary", "soccer", "Soccer", "Wednesdays", "Sep 9 – Dec 9", "1:30 – 2:30 PM", "Grass field", "No class 11/11", "$420", "reg-addison-soccer"),
@@ -766,9 +768,9 @@ def programs():
     counts = {}
     for p in PROGRAMS:
         counts[p[1]] = counts.get(p[1], 0) + 1
-    labels = {"soccer": "Soccer", "basketball": "Basketball", "cheer": "Cheer", "run": "Run Club"}
+    labels = {"soccer": "Soccer", "basketball": "Basketball", "football": "Flag Football", "cheer": "Cheer", "run": "Run Club"}
     filt = f'<button class="filter" type="button" data-filter="all" aria-pressed="true">All <span class="count">{len(PROGRAMS)}</span></button>'
-    for k in [k for k in ["soccer", "basketball", "cheer", "run"] if counts.get(k)]:
+    for k in [k for k in ["soccer", "basketball", "football", "cheer", "run"] if counts.get(k)]:
         filt += f'<button class="filter" type="button" data-filter="{k}" aria-pressed="false">{icon(k, sw=1.8)}{labels[k]} <span class="count">{counts.get(k, 0)}</span></button>'
     cards = ""
     for school, k, sport, day, dates, time, loc, note, price, reg in PROGRAMS:
