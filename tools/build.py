@@ -505,9 +505,8 @@ def home():
       <p class="lede fade-up d1">Professional after-school, PE, recess, before-school and camp sports programs for Bay Area schools. School programs are all we do, run on your campus by our own trained coaches.</p>
       <div class="btn-row fade-up d2">
         <a class="btn" href="contact.html">Partner with us {ARROW}</a>
-        <a class="btn btn--ghost" href="schools.html">How it works</a>
+        <a class="btn btn--ghost" href="programs.html">Current programs {ARROW}</a>
       </div>
-      <p class="hero__alt fade-up d3">Parent at a partner school?<a class="link-arrow" href="programs.html">Find your program {ARROW}</a></p>
     </div>
 
     <div class="collage" aria-label="Photos from our programs">
