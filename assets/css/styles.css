@@ -1348,3 +1348,7 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
 .programs-note strong { color: var(--ink); }
 .programs-note a { color: var(--maroon); font-weight: 700; text-decoration: underline; }
 @media (max-width: 960px) { .programs-top { padding-top: 100px; } .programs-note { font-size: 0.85rem; margin-top: -4px; } }
+
+/* Program card: secondary "pay online" link under Register */
+.program__pay { justify-self: center; display: inline-flex; align-items: center; gap: 6px; margin-top: -6px; font-size: 0.82rem; font-weight: 700; color: var(--maroon); text-decoration: underline; text-underline-offset: 3px; }
+.program__pay svg { width: 14px; height: 14px; }

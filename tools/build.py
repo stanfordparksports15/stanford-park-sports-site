@@ -123,9 +123,15 @@ LOGOS = [("01", "Taft Community School"), ("02", "Synapse School"), ("03", "Sili
          ("26", "Henry Ford Elementary"), ("27", "Lakeside"), ("28", "Duveneck Elementary")]
 
 # Stripe payment links (paste the links here when created; empty = Register goes to the contact page)
-WHITE_OAKS_SOCCER_PAY = ""
-WHITE_OAKS_BASKETBALL_PAY = ""
-NORTH_STAR_FLAG_PAY = ""
+WHITE_OAKS_SOCCER_PAY = "https://form.fillout.com/t/fZKjShrX1mus"
+WHITE_OAKS_BASKETBALL_PAY = "https://form.fillout.com/t/fHQF7k7taRus"
+NORTH_STAR_FLAG_PAY = "https://form.fillout.com/t/37iVkHAcLmus"
+# Stripe checkout for each registration form (shown as "Pay online" under Register)
+STRIPE_LINKS = {
+    WHITE_OAKS_SOCCER_PAY: "https://buy.stripe.com/aFabJ284CcfmfSwfKSafS21",
+    WHITE_OAKS_BASKETBALL_PAY: "https://buy.stripe.com/9B6cN6doWcfmcGk9muafS22",
+    NORTH_STAR_FLAG_PAY: "https://buy.stripe.com/cNicN6bgOgvCeOsgOWafS23",
+}
 
 PROGRAMS = [  # (school, sport key, sport, day, dates, time, location, note, price, registration form URL or "")
     ("North Star Academy", "football", "Flag Football · Winter", "Mondays", "Dec 7 – Feb 22", "3:15 – 4:15 PM", "Field", "Co-ed · Grades 3 to 5 · 7 classes: 12/7, 12/14, 1/11, 1/25, 2/1, 2/8, 2/22", "$320", NORTH_STAR_FLAG_PAY),
@@ -775,6 +781,8 @@ def programs():
     cards = ""
     for school, k, sport, day, dates, time, loc, note, price, reg in PROGRAMS:
         n = f'<p class="note">{note}</p>' if note else ""
+        pay = STRIPE_LINKS.get(reg)
+        pay_html = (f'<a class="program__pay" href="{pay}" target="_blank" rel="noopener">Already registered? Pay {price} online <span class="sr-only">for {school} {sport}</span>{ARROW}</a>' if pay else "")
         if reg.startswith("http"):
             reg_attrs = f'href="{reg}" target="_blank" rel="noopener"'
         else:
@@ -789,6 +797,7 @@ def programs():
         </dl>
         {n}
         <a class="btn btn--sm" {reg_attrs}>Register <span class="sr-only">for {school} {sport.replace("&amp;", "and")}</span>{ARROW}</a>
+        {pay_html}
       </article>'''
     body = f'''<main id="main">
 <section class="section programs-top" aria-labelledby="programs-title">
