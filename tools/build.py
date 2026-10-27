@@ -122,7 +122,8 @@ LOGOS = [("01", "Taft Community School"), ("02", "Synapse School"), ("03", "Sili
          ("23", "Vargas Elementary"), ("24", "Barron Park Elementary"), ("25", "Addison Elementary"),
          ("26", "Henry Ford Elementary"), ("27", "Lakeside"), ("28", "Duveneck Elementary")]
 
-PROGRAMS = [  # Fall 2026, from stanfordparksports.com/current-programs
+PROGRAMS = [  # (school, sport key, sport, day, dates, time, location, note, price, registration form URL or "")
+    ("Brittan Acres", "cheer", "Cheerleading", "Fridays", "Nov 6 – Jan 29", "2:35 – 3:35 PM", "Multi-purpose room", "No class 11/27, 12/18, 12/24, 12/31", "", "https://form.fillout.com/t/v3YKqY7rZZus"),
     ("North Star Academy", "run", "Run Club / Track &amp; Field", "Mondays", "Aug 24 – Nov 9", "3:10 – 4:10 PM", "Grass field", "No class 9/7, 9/28, 10/12", "$360", "reg-north-star-run-club"),
     ("Addison Elementary", "soccer", "Soccer", "Wednesdays", "Sep 9 – Dec 9", "1:30 – 2:30 PM", "Grass field", "No class 11/11", "$420", "reg-addison-soccer"),
     ("Lakeside", "soccer", "Soccer", "Mondays", "Sep 14 – Dec 14", "2:40 – 3:40 PM", "Grass field", "No class 10/12, 11/23", "$480", "reg-lakeside-soccer"),
@@ -202,7 +203,7 @@ def head(title, desc, page):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261023">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261027">
 </head>
 <body data-page="{page}">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -276,7 +277,7 @@ def footer():
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=20261023" defer></script>
+<script src="assets/js/site.js?v=20261027" defer></script>
 </body>
 </html>
 '''
@@ -744,27 +745,44 @@ def about():
 
 
 # ================================================================= PROGRAMS
+PROGRAM_LOGOS = {"Addison Elementary": "school-25", "Lakeside": "school-27", "San Miguel": "school-15",
+                 "Ponderosa": "school-11", "Bowman": "school-05", "Gabriela Mistral": "school-19",
+                 "North Star Academy": "school-northstar"}
+
+
+def program_logo(school):
+    f = PROGRAM_LOGOS.get(school)
+    if f and os.path.exists(os.path.join(IMG, "logos", f + ".webp")):
+        return f'<span class="program__logo"><img src="assets/img/logos/{f}.webp" alt="{school} logo" loading="lazy"></span>'
+    initials = "".join(w[0] for w in school.split()[:2]).upper()
+    return f'<span class="program__logo program__logo--mono" aria-hidden="true">{initials}</span>'
+
+
 def programs():
     counts = {}
     for p in PROGRAMS:
         counts[p[1]] = counts.get(p[1], 0) + 1
-    labels = {"soccer": "Soccer", "basketball": "Basketball", "run": "Run Club"}
+    labels = {"soccer": "Soccer", "basketball": "Basketball", "cheer": "Cheer", "run": "Run Club"}
     filt = f'<button class="filter" type="button" data-filter="all" aria-pressed="true">All <span class="count">{len(PROGRAMS)}</span></button>'
-    for k in ["soccer", "basketball", "run"]:
+    for k in [k for k in ["soccer", "basketball", "cheer", "run"] if counts.get(k)]:
         filt += f'<button class="filter" type="button" data-filter="{k}" aria-pressed="false">{icon(k, sw=1.8)}{labels[k]} <span class="count">{counts.get(k, 0)}</span></button>'
     cards = ""
-    for school, k, sport, day, dates, time, loc, note, price, slug in PROGRAMS:
+    for school, k, sport, day, dates, time, loc, note, price, reg in PROGRAMS:
         n = f'<p class="note">{note}</p>' if note else ""
+        if reg.startswith("http"):
+            reg_attrs = f'href="{reg}" target="_blank" rel="noopener"'
+        else:
+            reg_attrs = 'href="contact.html?role=Parent#form-title"'
         cards += f'''<article class="program reveal" data-sport="{k}">
         <div class="program__top"><span class="program__sport">{icon(k, sw=1.8)}{sport}</span><span class="program__price">{price}</span></div>
-        <h3>{school}</h3>
+        <div class="program__school">{program_logo(school)}<h3>{school}</h3></div>
         <dl>
           <div><dt>{icon("calendar")}<span class="sr-only">Day</span></dt><dd>{day} · {dates}</dd></div>
           <div><dt>{icon("clock")}<span class="sr-only">Time</span></dt><dd>{time}</dd></div>
           <div><dt>{icon("pin")}<span class="sr-only">Location</span></dt><dd>{loc}</dd></div>
         </dl>
         {n}
-        <a class="btn btn--sm" href="contact.html?role=Parent#form-title">Register <span class="sr-only">for {school} {sport.replace("&amp;", "and")}</span>{ARROW}</a>
+        <a class="btn btn--sm" {reg_attrs}>Register <span class="sr-only">for {school} {sport.replace("&amp;", "and")}</span>{ARROW}</a>
       </article>'''
     body = f'''<main id="main">
 {page_hero("Programs", [("Find your", False), ("school", True)],

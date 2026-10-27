@@ -270,7 +270,7 @@ def page():
     html = b.head("Section options | Stanford Park Youth Sports", "Design options for the Five ways to partner section.", "options.html")
     html = html.replace("</head>", CSS + "</head>")
     html += top + '<main id="main">' + intro + option_a() + option_b() + option_c() + option_d() + "</main>"
-    html += '<script src="assets/js/site.js?v=20261023" defer></script>' + JS + "</body></html>\n"
+    html += '<script src="assets/js/site.js?v=20261027" defer></script>' + JS + "</body></html>\n"
     b.write("options.html", html)
 
 

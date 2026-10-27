@@ -208,7 +208,7 @@ def page():
     html = b.head("Hero options | Stanford Park Youth Sports", "Design options for the homepage hero.", "hero-options.html")
     html = html.replace("</head>", CSS + "</head>")
     html += top + '<main id="main">' + intro + opt1() + opt2() + opt3() + opt4() + "</main>"
-    html += '<script src="assets/js/site.js?v=20261023" defer></script>' + JS + "</body></html>\n"
+    html += '<script src="assets/js/site.js?v=20261027" defer></script>' + JS + "</body></html>\n"
     b.write("hero-options.html", html)
 
 
