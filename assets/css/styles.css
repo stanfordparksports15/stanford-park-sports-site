@@ -1337,3 +1337,6 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
 .program__logo { width: 52px; height: 52px; flex: none; border-radius: 12px; background: #fff; border: 1.5px solid var(--line); display: flex; align-items: center; justify-content: center; padding: 6px; overflow: hidden; }
 .program__logo img { max-width: 100%; max-height: 100%; width: auto; height: auto; }
 .program__logo--mono { background: var(--maroon); border-color: var(--maroon); color: var(--cream); font-family: var(--font-display); font-size: 1.2rem; letter-spacing: .02em; }
+
+.program__logo:has(img[src*="school-brittanacres"]) { padding: 2px; }
+.program__logo img[src*="school-brittanacres"] { height: 100%; max-width: none; }
