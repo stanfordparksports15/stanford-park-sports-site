@@ -122,13 +122,17 @@ LOGOS = [("01", "Taft Community School"), ("02", "Synapse School"), ("03", "Sili
          ("23", "Vargas Elementary"), ("24", "Barron Park Elementary"), ("25", "Addison Elementary"),
          ("26", "Henry Ford Elementary"), ("27", "Lakeside"), ("28", "Duveneck Elementary")]
 
+# Stripe payment links (paste the links here when created; empty = Register goes to the contact page)
+WHITE_OAKS_SOCCER_PAY = ""
+WHITE_OAKS_BASKETBALL_PAY = ""
+
 PROGRAMS = [  # (school, sport key, sport, day, dates, time, location, note, price, registration form URL or "")
     ("Brittan Acres", "cheer", "Cheerleading", "Fridays", "Nov 6 – Jan 29", "2:35 – 3:35 PM", "Multi-purpose room", "No class 11/27, 12/18, 12/24, 12/31", "", "https://form.fillout.com/t/v3YKqY7rZZus"),
     ("North Star Academy", "run", "Run Club / Track &amp; Field", "Mondays", "Aug 24 – Nov 9", "3:10 – 4:10 PM", "Grass field", "No class 9/7, 9/28, 10/12", "$360", "reg-north-star-run-club"),
     ("Addison Elementary", "soccer", "Soccer", "Wednesdays", "Sep 9 – Dec 9", "1:30 – 2:30 PM", "Grass field", "No class 11/11", "$420", "reg-addison-soccer"),
     ("Lakeside", "soccer", "Soccer", "Mondays", "Sep 14 – Dec 14", "2:40 – 3:40 PM", "Grass field", "No class 10/12, 11/23", "$480", "reg-lakeside-soccer"),
-    ("White Oaks", "basketball", "Basketball", "Thursdays", "Sep 10 – Oct 29", "2:40 – 3:40 PM", "Basketball court", "", "$360", "reg-whiteoaks-basketball"),
-    ("White Oaks", "soccer", "Soccer", "Mondays", "Sep 14 – Nov 9", "2:40 – 3:40 PM", "Grass field", "No class 10/12", "$360", "reg-whiteoaks-soccer"),
+    ("White Oaks", "basketball", "Basketball · Winter", "Thursdays", "Nov 12 – Jan 21", "2:40 – 3:40 PM", "Basketball court", "8 classes · No class 11/26, 12/24, 12/31", "$360", WHITE_OAKS_BASKETBALL_PAY),
+    ("White Oaks", "soccer", "Soccer · Winter", "Mondays", "Nov 30 – Feb 22", "2:40 – 3:40 PM", "Grass field", "8 classes · No class 12/21, 12/28, 1/4, 1/18, 2/15", "$360", WHITE_OAKS_SOCCER_PAY),
     ("San Miguel", "basketball", "Basketball", "Tuesdays", "Sep 22 – Nov 17", "2:20 – 3:20 PM", "Basketball court", "No class 10/6", "$180", "reg-sanmiguel-bball"),
     ("Ponderosa", "soccer", "Soccer", "Thursdays", "Sep 17 – Nov 5", "2:40 – 3:40 PM", "Grass field", "Supervision begins at 2:00 PM", "$360", "reg-ponderosa-soccer"),
     ("Bowman", "basketball", "Basketball", "Tuesdays", "Sep 29 – Dec 1", "4:00 – 5:00 PM", "Basketball court", "", "$449", "reg-bowman-basketball"),
