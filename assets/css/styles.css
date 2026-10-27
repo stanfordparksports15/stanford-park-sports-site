@@ -1340,3 +1340,11 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
 
 .program__logo:has(img[src*="school-brittanacres"]) { padding: 2px; }
 .program__logo img[src*="school-brittanacres"] { height: 100%; max-width: none; }
+
+/* Programs page opens straight on the program list */
+.programs-top { padding-top: clamp(150px, 15vw, 190px); }
+.programs-note { display: flex; gap: 12px; align-items: flex-start; margin: -12px 0 28px; padding: 14px 18px; border-radius: 10px; background: var(--blush); color: var(--ink-2); font-size: 0.95rem; line-height: 1.5; max-width: 900px; }
+.programs-note svg { width: 20px; height: 20px; color: var(--maroon); flex: none; margin-top: 2px; }
+.programs-note strong { color: var(--ink); }
+.programs-note a { color: var(--maroon); font-weight: 700; text-decoration: underline; }
+@media (max-width: 960px) { .programs-top { padding-top: 100px; } .programs-note { font-size: 0.85rem; margin-top: -4px; } }

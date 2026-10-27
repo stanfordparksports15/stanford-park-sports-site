@@ -785,24 +785,19 @@ def programs():
         <a class="btn btn--sm" {reg_attrs}>Register <span class="sr-only">for {school} {sport.replace("&amp;", "and")}</span>{ARROW}</a>
       </article>'''
     body = f'''<main id="main">
-{page_hero("Programs", [("Find your", False), ("school", True)],
-            "Current programs, schedules and pricing for Fall 2026. Find your child’s school, pick a sport and register online in a few minutes.",
-            "5018", "Young player sprinting toward a soccer ball on the school field",
-            mphoto="n23", msmall=True, note="<strong>Please note:</strong> Not every school program is listed here, as many schools manage their own registrations through their internal systems. For the most accurate and up-to-date information, please check with your school’s administration or contact us directly.")}
-
-<section class="section" style="padding-top:clamp(24px,4vw,48px)" aria-labelledby="programs-title">
+<section class="section programs-top" aria-labelledby="programs-title">
   <div class="container">
     <div class="section-head section-head--split reveal">
       <div style="display:grid;gap:18px">
-        <span class="eyebrow">Fall 2026</span>
-        <h2 id="programs-title" class="display h-lg">Current <span class="outline">programs</span></h2>
+        <span class="eyebrow">Programs</span>
+        <h1 id="programs-title" class="display h-lg">Current <span class="outline">programs</span></h1>
       </div>
-      <p class="lede">Filter by sport, then tap Register to save your spot.</p>
+      <p class="lede">Find your child’s school, pick a sport and tap Register to save your spot.</p>
     </div>
+    <p class="programs-note reveal">{icon("info")}<span><strong>Please note:</strong> Not every school program is listed here, as many schools manage their own registrations through their internal systems. For the most accurate and up to date information, please check with your school’s administration or <a href="contact.html">contact us</a>.</span></p>
     <div class="filters" role="group" aria-label="Filter programs by sport">{filt}</div>
     <p id="filter-status" class="sr-only" aria-live="polite"></p>
     <div class="programs-grid" data-stagger="0.05">{cards}</div>
-    <div class="callout reveal">{icon("info")}<p><strong>Don’t see your school?</strong> Not every program is listed here, because many schools manage their own registration. Check with your school’s office, or <a class="link-arrow" href="contact.html" style="font-size:0.8rem">ask us {ARROW}</a></p></div>
   </div>
 </section>
 
