@@ -1,6 +1,6 @@
 # Stanford Park Youth Sports website
 
-Working with Claude? See `CLAUDE.md` for how the site is built, the common edits and the rules.
+Working with Claude or Codex? See `AGENTS.md` for how the site is built, the common edits and the rules.
 
 Plain static site: open `index.html`, or upload the whole folder to any static host
 (Netlify drag-and-drop, Vercel, GitHub Pages, Cloudflare Pages). No build step.
