@@ -2,3 +2,7 @@
 __pycache__/
 tools/build.bak*.py
 tools/*.bak.py
+
+# Private proposals (pricing, speaker notes): never publish
+flyer/ycis/
+tools/ycis*.py
