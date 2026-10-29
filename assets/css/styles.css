@@ -1352,3 +1352,15 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
 /* Program card: secondary "pay online" link under Register */
 .program__pay { justify-self: center; display: inline-flex; align-items: center; gap: 6px; margin-top: -6px; font-size: 0.82rem; font-weight: 700; color: var(--maroon); text-decoration: underline; text-underline-offset: 3px; }
 .program__pay svg { width: 14px; height: 14px; }
+
+/* Four steps on phones: clean numbered timeline on the red band, no white cards */
+@media (max-width: 960px) {
+  .steps.reveal-line { grid-template-columns: 1fr; gap: 0; row-gap: 0; }
+  .steps-band .step { display: grid; grid-template-columns: 38px 1fr; column-gap: 16px; padding: 0 0 24px; }
+  .steps-band .step::before { position: static; grid-row: 1; width: 38px; height: 38px; margin: 0; font-size: 1.15rem; box-shadow: none; display: grid; }
+  .steps-band .step:not(:last-child)::after { display: block; content: ""; position: absolute; left: 18px; top: 46px; bottom: 6px; right: auto; width: 2px; height: auto; background: rgba(251,245,236,0.28); opacity: 1; }
+  .steps-band .step__card { grid-row: 1; background: transparent; padding: 6px 0 0; border-radius: 0; gap: 4px; box-shadow: none; }
+  .steps-band .step__card:hover { transform: none; box-shadow: none; }
+  .steps-band .step h3 { color: var(--cream); font-size: 1.12rem; }
+  .steps-band .step p { color: #f2dcd7; font-size: 0.92rem; line-height: 1.5; }
+}

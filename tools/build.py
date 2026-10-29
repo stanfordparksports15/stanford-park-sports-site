@@ -210,12 +210,17 @@ def head(title, desc, page):
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="website">
 <link rel="canonical" href="{SITE_URL}/{"" if page == "index.html" else page}">
-<meta property="og:image" content="assets/img/p5063-1600.webp">
+<meta property="og:url" content="{SITE_URL}/{"" if page == "index.html" else page}">
+<meta property="og:image" content="{SITE_URL}/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{SITE_URL}/assets/img/og-image.jpg">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261027">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261029">
 </head>
 <body data-page="{page}">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -589,7 +594,7 @@ def home():
 <section class="section" aria-labelledby="trust-title">
   <div class="container trust">
     <figure class="trust__media reveal" style="margin:0">
-      <div class="frame">{img("coaches", "Five smiling Stanford Park Youth Sports coaches in matching caps and shirts on a school blacktop")}</div>
+      <div class="frame">{img("coachteam", "Four Stanford Park Sports coaches in matching shirts and whistles in a school gym")}</div>
       <figcaption>Trained, background-checked coaches</figcaption>
     </figure>
     <div>
