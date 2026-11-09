@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """Generates the static Stanford Park Youth Sports pages (shared header/footer/icons)."""
 import os
+import re
 from PIL import Image
 
-SITE = "/Users/javieralcaraz/com.apple.Maps.Suggestions/Claude/stanford-park-sports-site"
+SITE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IMG = os.path.join(SITE, "assets/img")
 
 # ---------------------------------------------------------------- icons
 UI = {
+    "user": '<circle cx="12" cy="8" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3"/>',
     "arrow": '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
     "pin": '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
     "clock": '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
@@ -136,7 +138,7 @@ STRIPE_LINKS = {
 PROGRAMS = [  # (school, sport key, sport, day, dates, time, location, note, price, registration form URL or "")
     ("North Star Academy", "football", "Flag Football · Winter", "Mondays", "Dec 7 – Feb 22", "3:15 – 4:15 PM", "Field", "Co-ed · Grades 3 to 5 · 7 classes: 12/7, 12/14, 1/11, 1/25, 2/1, 2/8, 2/22", "$320", NORTH_STAR_FLAG_PAY),
     ("Brittan Acres", "cheer", "Cheerleading", "Fridays", "Nov 6 – Jan 29", "2:35 – 3:35 PM", "Multi-purpose room", "No class 11/27, 12/18, 12/24, 12/31", "", "https://form.fillout.com/t/v3YKqY7rZZus"),
-    ("North Star Academy", "run", "Run Club / Track &amp; Field", "Mondays", "Aug 24 – Nov 9", "3:10 – 4:10 PM", "Grass field", "No class 9/7, 9/28, 10/12", "$360", "reg-north-star-run-club"),
+    ("North Star Academy", "run", "Run Club / Track &amp; Field", "Tuesdays", "Dec 1 – Feb 23", "3:10 – 4:10 PM", "Field", "No class 12/22, 12/29, 2/16", "$399", "https://form.fillout.com/t/1BTtzcDc8Wus"),
     ("Addison Elementary", "soccer", "Soccer", "Wednesdays", "Sep 9 – Dec 9", "1:30 – 2:30 PM", "Grass field", "No class 11/11", "$420", "reg-addison-soccer"),
     ("Lakeside", "soccer", "Soccer", "Mondays", "Sep 14 – Dec 14", "2:40 – 3:40 PM", "Grass field", "No class 10/12, 11/23", "$480", "reg-lakeside-soccer"),
     ("White Oaks", "basketball", "Basketball · Winter", "Thursdays", "Nov 12 – Jan 21", "2:40 – 3:40 PM", "Basketball court", "8 classes · No class 11/26, 12/24, 12/31", "$360", WHITE_OAKS_BASKETBALL_PAY),
@@ -220,7 +222,7 @@ def head(title, desc, page):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261029">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261109">
 </head>
 <body data-page="{page}">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -230,6 +232,9 @@ def head(title, desc, page):
 def header(page):
     links = "".join(f'<a href="{h}"{CUR if h == page else ""}>{t}</a>' for h, t in NAV)
     mlinks = "".join(f'<li><a class="m-link" href="{h}"{CUR if h == page else ""}>{t}</a></li>' for h, t in [("index.html", "Home")] + NAV)
+    academy_links = '<a href="https://spsacademy.org" target="_blank" rel="noopener noreferrer">SPS Basketball <span class="sr-only">(basketball, opens in a new tab)</span><span aria-hidden="true">↗</span></a><a href="/academy/athletic-performance"' + (CUR if page == "academy/athletic-performance" else "") + '>SPS Performance Club</a>'
+    links += '<details class="academy-nav"><summary>Academy <span aria-hidden="true">⌄</span></summary><div class="academy-dropdown">' + academy_links + '</div></details>'
+    mlinks += '<li><details class="academy-mobile"><summary>Academy <span aria-hidden="true">⌄</span></summary><div class="academy-mobile__links">' + academy_links + '</div></details></li>'
     return f'''<header class="site-header">
   <div class="container nav">
     <a class="brand" href="index.html" aria-label="Stanford Park Youth Sports home"><img src="assets/img/logo.png" alt="Stanford Park Youth Sports" width="640" height="184"></a>
@@ -294,7 +299,7 @@ def footer():
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=20261027" defer></script>
+<script src="assets/js/site.js?v=20261109" defer></script>
 </body>
 </html>
 '''
@@ -457,6 +462,11 @@ def schools_marquee(top=False):
 
 
 def write(name, html):
+    if name.startswith("academy/"):
+        html = re.sub(r'((?:href|src|srcset)=")((?:assets/|(?:index|about|programs|schools|donate|get-involved|contact)\.html)[^"]*)', r'\1/\2', html)
+        # Every URL in a responsive image srcset must resolve from the site root.
+        html = html.replace(', assets/', ', /assets/')
+    os.makedirs(os.path.dirname(os.path.join(SITE, name)), exist_ok=True)
     with open(os.path.join(SITE, name), "w") as f:
         f.write(html)
     print("wrote", name)
@@ -1141,10 +1151,78 @@ def favicon():
         f.write(svg)
 
 
+
+# ================================================= ATHLETIC PERFORMANCE
+def athletic_performance():
+    page = "academy/athletic-performance"
+    highlights = ["Speed and acceleration training", "Agility and footwork development", "Strength and conditioning", "Running mechanics and endurance", "Balance, coordination, and injury-prevention fundamentals", "Athletic confidence and discipline"]
+    highlight_html = "".join(f'<li><span class="ap-number">0{i + 1}</span><h3>{text}</h3>{icon("check")}</li>' for i, text in enumerate(highlights))
+    facts = [("Ages", "5–14 years old"), ("Frequency", "Once per week"), ("Session", "75 minutes"), ("Season", "10 weeks"), ("Location", "Menlo Park / Palo Alto area"), ("Schedule", "Saturdays · Time to be announced"), ("Head Coach", "Coach Bryce")]
+    fact_html = "".join(f'<div><dt>{label}</dt><dd>{value}</dd></div>' for label, value in facts)
+    body = f'''<main id="main" class="ap-page">
+<section class="ap-hero" aria-labelledby="ap-title">
+  <div class="container ap-hero__grid">
+    <div class="ap-hero__copy">
+      <span class="eyebrow">Stanford Park Sports · Academy</span>
+      <h1 id="ap-title" class="display">SPS <span>Performance Club</span></h1>
+      <p class="ap-subtitle">Speed | Strength | Agility | Conditioning</p>
+      <p class="lede">Build the athlete. Elevate their game.</p>
+      <p>A stronger foundation for every sport. Youth athletic development for ages 5–14.</p>
+      <a class="btn" href="#registration">Registration coming soon {ARROW}</a>
+      <div class="ap-hero__tags"><span>Ages 5–14</span><span>75 minutes</span><span>10 weeks</span></div>
+    </div>
+    <figure class="ap-hero__media">
+      {img("performanceclub-hero", "Coach demonstrating a lunge to young SPS athletes during indoor training", eager=True)}
+      <figcaption>Move with purpose. Play with confidence.</figcaption>
+    </figure>
+  </div>
+</section>
+<div class="ap-stripe" aria-hidden="true">Faster. Stronger. More confident.</div>
+
+<section class="section" aria-labelledby="ap-details-title">
+  <div class="container ap-details"><div><span class="eyebrow">The program at a glance</span><h2 id="ap-details-title" class="display h-lg">Show up.<br><span class="outline">Build better.</span></h2><p class="lede">One focused session each week, designed for growing athletes.</p><p class="ap-details__description">SPS Performance Club helps young athletes build speed, strength, agility, and confidence for every sport. Through running mechanics, footwork drills, coordination, endurance, and age-appropriate strength training, athletes develop a stronger foundation in a positive, motivating environment.</p></div><dl class="ap-facts">{fact_html}</dl></div>
+</section>
+<section class="section ap-coach" aria-labelledby="ap-coach-title">
+  <div class="container ap-coach__grid">
+    <div class="ap-coach__photo">{img("coach-bryce", "Coach Bryce on the field at Stanford Park Sports", sizes="(max-width: 960px) 100vw, 40vw")}</div>
+    <div><span class="eyebrow">Meet your head coach</span><h2 id="ap-coach-title" class="display h-lg">Coach <span class="outline">Bryce</span></h2><p class="lede">Head Coach · SPS Performance Club</p><p>Coach Bryce will lead our youth athletic development program.</p><p class="ap-coach__bio">Full biography coming soon.</p></div>
+  </div>
+</section>
+<section class="section ap-training" aria-labelledby="ap-training-title">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Program highlights</span><h2 id="ap-training-title" class="display h-lg">Train with <span class="outline">purpose.</span></h2></div>
+    <div class="ap-training__grid"><ul class="ap-highlights">{highlight_html}</ul>
+      <div class="ap-training__photos">
+        {img("performance-exercise", "Young athletes practicing footwork over mini hurdles and cones")}
+        {img("performance-running", "Children sprinting together on a grass field")}
+        <p>Fundamental movement. Positive coaching. Confidence that carries into every game.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section ap-registration" id="registration" aria-labelledby="ap-registration-title">
+  <div class="container"><span class="eyebrow">Your next step starts here</span><h2 id="ap-registration-title" class="display h-lg">Registration<br><span>Coming Soon</span></h2><p>We’re getting ready for our first season. Registration details, exact location, pricing, and start date will be announced here.</p><p class="ap-registration__schedule">Saturdays · Ages 5–14 · Menlo Park / Palo Alto area</p><span class="ap-registration__badge">Registration is not open yet</span></div>
+</section>
+<section class="section" aria-labelledby="ap-foundation">
+  <div class="container ap-intro">
+    <div><span class="eyebrow">Built for every sport</span><h2 id="ap-foundation" class="display h-lg">The foundation<br>for <span class="outline">what’s next.</span></h2></div>
+    <div class="ap-prose">
+      <p>SPS Performance Club is designed to help young athletes become faster, stronger, more explosive, and more confident. Our training focuses on developing fundamental athletic abilities that translate into improved performance across all sports, including basketball, soccer, football, volleyball, and more.</p>
+      <p>Led by experienced coaches, our program combines speed development, running mechanics, agility drills, coordination, endurance, and age-appropriate strength and conditioning in a positive and motivating environment.</p>
+      <p>Whether your child is looking to improve their athletic performance or simply develop a stronger foundation for sports, SPS Performance Club provides professional training to help every athlete reach their potential.</p>
+    </div>
+  </div>
+</section>
+</main>'''
+    write("academy/athletic-performance/index.html", head("SPS Performance Club | Stanford Park Sports", "Speed, strength, agility and conditioning for athletes ages 5–14. A 10-week youth development program led by Coach Bryce in the Menlo Park / Palo Alto area.", page) + header(page) + body + footer())
+
 # ---------------------------------------------------------------- launch files
 def launch_files():
-    pages = ["", "about.html", "programs.html", "schools.html", "get-involved.html", "donate.html", "contact.html"]
+    pages = ["", "about.html", "programs.html", "schools.html", "get-involved.html", "donate.html", "contact.html", "academy/athletic-performance"]
     redirects = f"""# Old Wix addresses (.org Foundation site + .com site) -> new pages (301 keeps Google rankings)
+/academy/athletic-performance /academy/athletic-performance/index.html 200
 /about-us            /about.html          301
 /coach               /get-involved.html#coach       301
 /copy-of-coach       /get-involved.html#volunteer   301
@@ -1177,5 +1255,5 @@ Sitemap: {SITE_URL}/sitemap.xml
 
 if __name__ == "__main__":
     favicon()
-    home(); about(); programs(); schools(); donate(); get_involved(); contact()
+    home(); about(); programs(); schools(); donate(); get_involved(); contact(); athletic_performance()
     launch_files()

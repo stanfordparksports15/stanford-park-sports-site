@@ -1,4 +1,5 @@
 # Old Wix addresses (.org Foundation site + .com site) -> new pages (301 keeps Google rankings)
+/academy/athletic-performance /academy/athletic-performance/index.html 200
 /about-us            /about.html          301
 /coach               /get-involved.html#coach       301
 /copy-of-coach       /get-involved.html#volunteer   301

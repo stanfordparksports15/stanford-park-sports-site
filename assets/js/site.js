@@ -276,3 +276,37 @@
   /* ---------- Footer year ---------- */
   document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();
+
+/* Academy disclosures: hover on desktop, click/tap and Escape everywhere. */
+(function () {
+  var disclosures = document.querySelectorAll('.academy-nav, .academy-mobile');
+  disclosures.forEach(function (details) {
+    if (details.classList.contains('academy-nav')) {
+      details.querySelector('summary').addEventListener('click', function (event) {
+        event.preventDefault();
+        details.open = true;
+      });
+      details.addEventListener('mouseenter', function () {
+        if (window.matchMedia('(hover: hover)').matches) details.open = true;
+      });
+      details.addEventListener('mouseleave', function () {
+        if (!details.contains(document.activeElement)) details.open = false;
+      });
+      details.addEventListener('focusout', function (event) {
+        if (!details.contains(event.relatedTarget)) details.open = false;
+      });
+    }
+    details.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        details.open = false;
+        details.querySelector('summary').focus();
+        event.stopPropagation();
+      }
+    });
+  });
+  document.addEventListener('click', function (event) {
+    disclosures.forEach(function (details) {
+      if (!details.contains(event.target)) details.open = false;
+    });
+  });
+})();
