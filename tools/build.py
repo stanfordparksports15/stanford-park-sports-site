@@ -136,6 +136,8 @@ STRIPE_LINKS = {
 }
 
 PROGRAMS = [  # (school, sport key, sport, day, dates, time, location, note, price, registration form URL or "")
+    ("Gabriela Mistral", "soccer", "Soccer · Winter", "Tuesdays", "Nov 10 to Jan 19", "2:40 to 3:40 PM", "Grass field", "Grades K to 5 · 8 classes · No class 11/24, 12/22, 12/29 · Outdoors only, canceled if it rains", "$320", "https://form.fillout.com/t/4THBhac9h8us"),
+    ("Gabriela Mistral", "basketball", "Basketball · Winter", "Wednesdays", "Nov 18 to Jan 27", "2:40 to 3:40 PM", "Outdoor basketball courts", "Grades K to 5 · 8 classes · No class 11/25, 12/23, 12/30 · Outdoors only, canceled if it rains", "$320", "https://form.fillout.com/t/1GMmae2JECus"),
     ("North Star Academy", "football", "Flag Football · Winter", "Mondays", "Dec 7 – Feb 22", "3:15 – 4:15 PM", "Field", "Co-ed · Grades 3 to 5 · 7 classes: 12/7, 12/14, 1/11, 1/25, 2/1, 2/8, 2/22", "$320", NORTH_STAR_FLAG_PAY),
     ("Brittan Acres", "cheer", "Cheerleading", "Fridays", "Nov 6 – Jan 29", "2:35 – 3:35 PM", "Multi-purpose room", "No class 11/27, 12/18, 12/24, 12/31", "", "https://form.fillout.com/t/v3YKqY7rZZus"),
     ("North Star Academy", "run", "Run Club / Track &amp; Field", "Tuesdays", "Dec 1 – Feb 23", "3:10 – 4:10 PM", "Field", "No class 12/22, 12/29, 2/16", "$399", "https://form.fillout.com/t/1BTtzcDc8Wus"),
@@ -146,8 +148,6 @@ PROGRAMS = [  # (school, sport key, sport, day, dates, time, location, note, pri
     ("San Miguel", "basketball", "Basketball", "Tuesdays", "Sep 22 – Nov 17", "2:20 – 3:20 PM", "Basketball court", "No class 10/6", "$180", "reg-sanmiguel-bball"),
     ("Ponderosa", "soccer", "Soccer", "Thursdays", "Sep 17 – Nov 5", "2:40 – 3:40 PM", "Grass field", "Supervision begins at 2:00 PM", "$360", "reg-ponderosa-soccer"),
     ("Bowman", "basketball", "Basketball", "Tuesdays", "Sep 29 – Dec 1", "4:00 – 5:00 PM", "Basketball court", "", "$449", "reg-bowman-basketball"),
-    ("Gabriela Mistral", "soccer", "Soccer · Winter", "Tuesdays", "Nov 10 to Jan 19", "2:40 to 3:40 PM", "Grass field", "Grades K to 5 · 8 classes · No class 11/24, 12/22, 12/29 · Outdoors only, canceled if it rains", "$320", "https://form.fillout.com/t/4THBhac9h8us"),
-    ("Gabriela Mistral", "basketball", "Basketball · Winter", "Wednesdays", "Nov 18 to Jan 27", "2:40 to 3:40 PM", "Outdoor basketball courts", "Grades K to 5 · 8 classes · No class 11/25, 12/23, 12/30 · Outdoors only, canceled if it rains", "$320", "https://form.fillout.com/t/1GMmae2JECus"),
 ]
 
 SAFETY = [
