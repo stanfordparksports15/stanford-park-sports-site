@@ -146,8 +146,8 @@ PROGRAMS = [  # (school, sport key, sport, day, dates, time, location, note, pri
     ("San Miguel", "basketball", "Basketball", "Tuesdays", "Sep 22 – Nov 17", "2:20 – 3:20 PM", "Basketball court", "No class 10/6", "$180", "reg-sanmiguel-bball"),
     ("Ponderosa", "soccer", "Soccer", "Thursdays", "Sep 17 – Nov 5", "2:40 – 3:40 PM", "Grass field", "Supervision begins at 2:00 PM", "$360", "reg-ponderosa-soccer"),
     ("Bowman", "basketball", "Basketball", "Tuesdays", "Sep 29 – Dec 1", "4:00 – 5:00 PM", "Basketball court", "", "$449", "reg-bowman-basketball"),
-    ("Gabriela Mistral", "soccer", "Soccer", "Tuesdays", "Sep 15 – Nov 3", "2:40 – 3:40 PM", "Grass field", "", "$320", "reg-gabriela-mistral-soccer"),
-    ("Gabriela Mistral", "basketball", "Basketball", "Mondays", "Sep 14 – Nov 2", "2:40 – 3:30 PM", "Basketball court", "", "$320", "reg-gabrielamistral-basketball"),
+    ("Gabriela Mistral", "soccer", "Soccer · Winter", "Tuesdays", "Nov 10 to Jan 19", "2:40 to 3:40 PM", "Grass field", "Grades K to 5 · 8 classes · No class 11/24, 12/22, 12/29 · Outdoors only, canceled if it rains", "$320", "https://form.fillout.com/t/4THBhac9h8us"),
+    ("Gabriela Mistral", "basketball", "Basketball · Winter", "Wednesdays", "Nov 18 to Jan 27", "2:40 to 3:40 PM", "Outdoor basketball courts", "Grades K to 5 · 8 classes · No class 11/25, 12/23, 12/30 · Outdoors only, canceled if it rains", "$320", "https://form.fillout.com/t/1GMmae2JECus"),
 ]
 
 SAFETY = [
