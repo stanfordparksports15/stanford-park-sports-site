@@ -145,7 +145,7 @@ PROGRAMS = [  # (school, sport key, sport, day, dates, time, location, note, pri
     ("Lakeside", "soccer", "Soccer", "Mondays", "Sep 14 – Dec 14", "2:40 – 3:40 PM", "Grass field", "No class 10/12, 11/23", "$480", "reg-lakeside-soccer"),
     ("White Oaks", "basketball", "Basketball · Winter", "Thursdays", "Nov 12 – Jan 21", "2:40 – 3:40 PM", "Basketball court", "8 classes · No class 11/26, 12/24, 12/31", "$360", WHITE_OAKS_BASKETBALL_PAY),
     ("White Oaks", "soccer", "Soccer · Winter", "Mondays", "Nov 30 – Feb 22", "2:40 – 3:40 PM", "Grass field", "8 classes · No class 12/21, 12/28, 1/4, 1/18, 2/15", "$360", WHITE_OAKS_SOCCER_PAY),
-    ("San Miguel", "basketball", "Basketball", "Tuesdays", "Sep 22 – Nov 17", "2:20 – 3:20 PM", "Basketball court", "No class 10/6", "$180", "reg-sanmiguel-bball"),
+    ("San Miguel", "run", "Run Club", "Tuesdays", "Jan 12 – Mar 16", "2:20 – 3:20 PM", "San Miguel · Location to be announced", "8 classes: 1/12, 1/26, 2/2, 2/9, 2/23, 3/2, 3/9, 3/16<br>TDL · 12:35 – 1:35 PM on 1/12, 2/9, 3/9<br>No class 1/19, 2/16", "$180", "https://form.fillout.com/t/eQreDjECVMus"),
     ("Ponderosa", "soccer", "Soccer", "Thursdays", "Sep 17 – Nov 5", "2:40 – 3:40 PM", "Grass field", "Supervision begins at 2:00 PM", "$360", "reg-ponderosa-soccer"),
     ("Bowman", "basketball", "Basketball", "Tuesdays", "Sep 29 – Dec 1", "4:00 – 5:00 PM", "Basketball court", "", "$449", "reg-bowman-basketball"),
 ]
@@ -626,6 +626,22 @@ def home():
       <a class="btn" href="contact.html">Ask about a sport {ARROW}</a>
     </div>
     <div class="sports sports--compact" data-stagger="0.05">{sports}</div>
+  </div>
+</section>
+
+<section class="section home-academy" aria-labelledby="next-level-title">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Beyond school enrichment</span><h2 id="next-level-title" class="display h-lg">Take your game<br><span class="outline">to the next level</span></h2><p class="lede">Love playing with SPS at school? Keep growing with focused basketball training or build the athletic foundation for every sport.</p></div>
+    <div class="home-academy__grid">
+      <article class="home-academy__card">
+        {img("i5196", "Young basketball players training with Stanford Park Sports", sizes="(max-width: 960px) 100vw, 50vw")}
+        <div class="home-academy__copy"><span class="eyebrow">Basketball academy</span><h3 class="display h-sm">SPS Academy</h3><p>Take the next step in basketball with focused skill development and coaching that builds confidence on the court.</p><a class="btn" href="https://spsacademy.org" target="_blank" rel="noopener noreferrer">Explore SPS Basketball {icon("external")}<span class="sr-only">(opens in a new tab)</span></a></div>
+      </article>
+      <article class="home-academy__card">
+        {img("performanceclub-hero", "Coach demonstrating a training exercise to young SPS athletes", sizes="(max-width: 960px) 100vw, 50vw")}
+        <div class="home-academy__copy"><span class="eyebrow">Athletic development · Ages 5–14</span><h3 class="display h-sm">SPS Performance Club</h3><p>Build speed, strength, agility, and conditioning with positive coaching and a stronger foundation for every sport.</p><a class="btn" href="/academy/athletic-performance">Explore Performance Club {ARROW}</a></div>
+      </article>
+    </div>
   </div>
 </section>
 

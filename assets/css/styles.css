@@ -1442,3 +1442,17 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
 
 .ap-details__description { margin-top: 24px; max-width: 48ch; color: var(--ink-2); line-height: 1.75; }
 .ap-training__photos img[src*="performance-running"] { object-position: 72% center; }
+
+/* Homepage pathway from school enrichment to Academy programs. */
+.home-academy { background: var(--cream-2); }
+.home-academy__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.home-academy__card { overflow: hidden; background: var(--paper); border: 1.5px solid var(--line); border-radius: var(--radius-lg); display: flex; flex-direction: column; }
+.home-academy__card > img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.home-academy__card > img[src*="performanceclub-hero"] { object-position: center 70%; }
+.home-academy__copy { padding: 32px; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; flex: 1; }
+.home-academy__copy p { color: var(--ink-2); }
+.home-academy__copy .btn { margin-top: auto; }
+@media (max-width: 960px) {
+  .home-academy__grid { grid-template-columns: 1fr; gap: 24px; }
+  .home-academy__copy { padding: 24px; }
+}
