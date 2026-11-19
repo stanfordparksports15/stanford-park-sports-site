@@ -1234,11 +1234,42 @@ def athletic_performance():
 </main>'''
     write("academy/athletic-performance/index.html", head("SPS Performance Club | Stanford Park Sports", "Speed, strength, agility and conditioning for athletes ages 5–14. A 10-week youth development program led by Coach Bryce in the Menlo Park / Palo Alto area.", page) + header(page) + body + footer())
 
+
+# ================================================= FAMILY GIVING CAMPAIGN
+def help_more_kids_play():
+    body = f'''<main id="main" class="giving-page">
+<section class="giving-hero" aria-labelledby="giving-title">
+  <div class="container giving-hero__grid">
+    <div class="giving-hero__copy"><span class="eyebrow">Stanford Park Sports Foundation</span><h1 class="display" id="giving-title">Help more<br><span>kids play.</span></h1><p class="giving-hero__lead">The joy your child found in sports.<br>A chance to share it with another family.</p><p>Your gift helps bring coaching, connection, and confidence to children from low-income families through scholarships and free sports programs.</p><a class="btn" href="#give">Give the gift of play {icon("heart")}</a><span class="giving-trust">{icon("shield")} A registered 501(c)(3) nonprofit · EIN {EIN}</span></div>
+    <div class="giving-hero__visual"><figure class="giving-hero__photo">{img("flagcard", "Young Stanford Park Sports players standing together with their coaches on a school field", eager=True)}</figure><div class="giving-hero__inset">{img("i3476", "Young SPS athletes smiling together", sizes="240px")}</div><span class="giving-hero__seal">{icon("heart")}<span>One community.<br>More kids playing.</span></span></div>
+  </div>
+</section>
+<div class="giving-ribbon"><div class="container"><span>More confidence.</span><span>More connection.</span><span>More chances to play.</span></div></div>
+<section class="section giving-form-section" id="give" aria-labelledby="giving-form-title"><div class="container giving-form-grid"><div class="giving-form-copy"><span class="eyebrow">Give a child a chance to play</span><h2 class="display h-lg" id="giving-form-title">A little generosity.<br><span class="outline">A world of possibility.</span></h2><p class="lede">Make your gift right here. Choose an amount that feels right for your family.</p><p>Your support helps provide scholarships, caring coaches, and free sports programs for more children.</p><span class="giving-trust">{icon("shield")} Donations processed securely by Donorbox.</span></div><div class="giving-form-panel"><script src="https://donorbox.org/widget.js" async></script><iframe src="https://donorbox.org/embed/stanford-park-sports-foundation" name="donorbox" title="Donate to Stanford Park Sports Foundation" allow="payment" allowpaymentrequest height="900" width="100%" style="border:0;max-width:500px;min-width:250px;max-height:none" loading="eager"></iframe><p class="giving-form-fallback">Having trouble with the form? <a href="{DONATE_URL}" target="_blank" rel="noopener noreferrer">Open our donation page<span class="sr-only"> in a new tab</span></a>.</p></div></div></section>
+<section class="section giving-letter" aria-labelledby="giving-families">
+  <div class="container giving-letter__grid"><div><span class="eyebrow">To our SPS families</span><h2 id="giving-families" class="display h-lg">You know<br><span class="outline">that feeling.</span></h2></div><div class="giving-prose"><p class="lede">The excitement before practice. The pride after learning something new. The friendships that last beyond the final whistle.</p><p>Whether your family joined us through a school program or SPS Academy, you’re part of the Stanford Park Sports community. You’ve seen how much a caring coach and a chance to play can mean to a child.</p><p>For some families, program fees put that experience out of reach. We want more children to have the same opportunity to move, grow, and belong—regardless of what their family can afford.</p><p>If SPS has made a difference for your child, please consider helping us share that experience with another family. A gift of any size can help us expand access to sports.</p><p class="giving-signoff">Thank you for being part of our community.<br><strong>The Stanford Park Sports team</strong></p></div></div>
+</section>
+<section class="section giving-impact" aria-labelledby="giving-impact-title"><div class="container"><div class="section-head"><span class="eyebrow">What your generosity supports</span><h2 id="giving-impact-title" class="display h-lg">Open a door.<br><span class="outline">Make room for more.</span></h2><p class="lede">Your donation supports the people, programs, and equipment that help children get in the game.</p></div><div class="giving-impact__grid">
+<article>{img("giving-spsf", "Children enjoying soccer with a Stanford Park Sports Foundation coach")}<div class="giving-impact__copy"><span class="giving-impact__number">01</span>{icon("heart")}<h3>Scholarships for kids</h3><p>Help children from low-income families participate in sports programs that would otherwise be out of reach.</p></div></article>
+<article>{img("performanceclub-hero", "Coach guiding young athletes through a training exercise")}<div class="giving-impact__copy"><span class="giving-impact__number">02</span>{icon("users")}<h3>Coaches &amp; equipment</h3><p>Support caring coaches and the balls, cones, and training gear that make active, engaging sessions possible.</p></div></article>
+<article>{img("giving-cheer-team", "Young athletes and their coach in Foundation shirts in a gym")}<div class="giving-impact__copy"><span class="giving-impact__number">03</span>{icon("school")}<h3>Free programs. More schools.</h3><p>Help bring sports to more schools and communities where families need additional support.</p></div></article>
+</div></div></section>
+<section class="section giving-community" aria-labelledby="giving-community-title"><div class="container giving-community__grid"><div class="giving-community__photos">{img("giving-jaxon", "Young Stanford Park Sports Foundation athletes enjoying a basketball arena visit")}{img("giving-spsf", "Young Stanford Park Sports Foundation players smiling and playing soccer together")}</div><div><span class="eyebrow">One community. More possibility.</span><h2 id="giving-community-title" class="display h-lg">Every child<br>deserves <span class="outline">a chance.</span></h2><p class="lede">To be part of a team. To try something new. To have someone cheering them on.</p><p>We’re building on the community our school and academy families already know—so more children can experience the confidence and connection that come from playing together.</p></div></div></section>
+<section class="section giving-moments" aria-labelledby="giving-moments-title"><div class="container"><div class="section-head"><span class="eyebrow">The people behind the play</span><h2 class="display h-lg" id="giving-moments-title">Our community.<br><span class="outline">So much possibility.</span></h2></div><div class="giving-moments__grid">
+<figure>{img("giving-community-extra", "Stanford Park Sports Foundation children and coaches together on a grass field")}<figcaption>Learning, playing, and growing together.</figcaption></figure>
+<figure>{img("giving-team", "Stanford Park Sports Foundation players together on a school field")}<figcaption>Confidence that grows with every practice.</figcaption></figure>
+<figure>{img("giving-coaching-team", "Five Stanford Park Sports coaches together on a school court")}<figcaption>Caring coaches. A shared purpose.</figcaption></figure>
+</div></div></section>
+<section class="section giving-cta" aria-labelledby="giving-cta-title"><div class="container"><span class="eyebrow">Let’s bring more kids into the game</span><h2 id="giving-cta-title" class="display h-lg">Your family is<br>part of <span>what’s next.</span></h2><p>Make a one-time gift or become a monthly supporter using the donation form above. Every act of generosity helps us work toward a community where more children can play.</p><a class="btn btn--cream" href="#give">Donate to help kids play {icon("heart")}</a><p class="giving-cta__trust">Stanford Park Sports Foundation · Registered 501(c)(3)<br>EIN {EIN} · Donations are tax-deductible.</p><a class="giving-question" href="mailto:{EMAIL}?subject=Supporting%20more%20kids">Questions about giving? Get in touch {icon("arrow")}</a></div></section>
+</main>'''
+    write("help-more-kids-play.html", head("Help More Kids Play | Stanford Park Sports Foundation", "Help bring sports to more children from low-income families. Support scholarships, coaching, equipment, and free programs through Stanford Park Sports Foundation.", "help-more-kids-play.html") + header("help-more-kids-play.html") + body + footer())
+
 # ---------------------------------------------------------------- launch files
 def launch_files():
-    pages = ["", "about.html", "programs.html", "schools.html", "get-involved.html", "donate.html", "contact.html", "academy/athletic-performance"]
+    pages = ["", "about.html", "programs.html", "schools.html", "get-involved.html", "donate.html", "contact.html", "academy/athletic-performance", "help-more-kids-play"]
     redirects = f"""# Old Wix addresses (.org Foundation site + .com site) -> new pages (301 keeps Google rankings)
 /academy/athletic-performance /academy/athletic-performance/index.html 200
+/help-more-kids-play /help-more-kids-play.html 200
 /about-us            /about.html          301
 /coach               /get-involved.html#coach       301
 /copy-of-coach       /get-involved.html#volunteer   301
@@ -1271,5 +1302,5 @@ Sitemap: {SITE_URL}/sitemap.xml
 
 if __name__ == "__main__":
     favicon()
-    home(); about(); programs(); schools(); donate(); get_involved(); contact(); athletic_performance()
+    home(); about(); programs(); schools(); donate(); get_involved(); contact(); athletic_performance(); help_more_kids_play()
     launch_files()
