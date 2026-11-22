@@ -1546,3 +1546,7 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
  .giving-cta { margin-bottom: 32px; border-radius: 18px; }
  .giving-cta .container { padding-inline: 20px; }
 }
+
+/* Keep the full group visible in the campaign community photograph. */
+.giving-community__photos img[src*="giving-banner"] { aspect-ratio: 4 / 3; object-position: center; }
+.giving-moments img[src*="giving-academy"] { object-position: center 65%; }
