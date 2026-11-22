@@ -1621,3 +1621,13 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
 
 @media (min-width: 961px) { .giving-hero h1 { font-size: clamp(2.6rem,4.8vw,5rem); } }
 @media (max-width: 960px) { .giving-hero h1 { font-size: clamp(1.3rem,6.4vw,3.8rem); } }
+
+.giving-other { background: var(--cream); border-bottom: 1px solid var(--line); }
+.giving-other h2 { margin: 20px 0 36px; }
+.giving-other__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.giving-other article { padding: 32px; border: 1px solid var(--line); background: white; border-radius: 16px; display: grid; gap: 20px; align-content: start; justify-items: start; }
+.giving-other article > svg { width: 30px; height: 30px; color: var(--maroon); }
+.giving-other h3 { font-size: 1.4rem; font-weight: 800; }
+.giving-other p { color: var(--ink-2); }
+.giving-other__email { color: var(--maroon); text-decoration: underline; overflow-wrap: anywhere; }
+@media (max-width: 960px) { .giving-other__grid { grid-template-columns: 1fr; } .giving-other article { padding: 24px; } .giving-other .btn { white-space: normal; text-align: center; } }
