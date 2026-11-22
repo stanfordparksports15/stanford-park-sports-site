@@ -1618,3 +1618,6 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
 @media (max-width: 960px) { .giving-hero h1 { font-size: clamp(1.65rem,7.7vw,4.6rem); } }
 
 @media (min-width: 961px) { .giving-hero h1 { font-size: clamp(3rem,5.8vw,6rem); } .giving-hero__grid { grid-template-columns: 1.15fr 1fr; gap: 48px; } }
+
+@media (min-width: 961px) { .giving-hero h1 { font-size: clamp(2.6rem,4.8vw,5rem); } }
+@media (max-width: 960px) { .giving-hero h1 { font-size: clamp(1.3rem,6.4vw,3.8rem); } }

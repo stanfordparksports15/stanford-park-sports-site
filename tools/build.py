@@ -222,7 +222,7 @@ def head(title, desc, page):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v={"20261121larger" if page == "help-more-kids-play.html" else "20261109"}">
+<link rel="stylesheet" href="assets/css/styles.css?v={"20261121motto" if page == "help-more-kids-play.html" else "20261109"}">
 </head>
 <body data-page="{page}">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -1240,7 +1240,7 @@ def help_more_kids_play():
     body = f'''<main id="main" class="giving-page">
 <section class="giving-hero" aria-labelledby="giving-title">
   <div class="container giving-hero__grid">
-    <div class="giving-hero__copy"><span class="eyebrow">Stanford Park Sports Foundation</span><h1 class="display" id="giving-title">More than sports.<br><span>A chance to grow.</span></h1><p class="giving-hero__lead">The joy your child found in sports.<br>A chance to share it with another family.</p><p>Every child deserves access to exceptional coaching. Help bring experienced, high-level coaches across a wide range of sports to more schools and children, regardless of their family’s income.</p><a class="btn" href="#give">Give the gift of play {icon("heart")}</a><span class="giving-trust">{icon("shield")} A registered 501(c)(3) nonprofit · EIN {EIN}</span></div>
+    <div class="giving-hero__copy"><span class="eyebrow">Stanford Park Sports Foundation</span><h1 class="display" id="giving-title">We do more than coach.<br><span>We build character.</span></h1><p class="giving-hero__lead">The joy your child found in sports.<br>A chance to share it with another family.</p><p>Every child deserves access to exceptional coaching. Help bring experienced, high-level coaches across a wide range of sports to more schools and children, regardless of their family’s income.</p><a class="btn" href="#give">Give the gift of play {icon("heart")}</a><span class="giving-trust">{icon("shield")} A registered 501(c)(3) nonprofit · EIN {EIN}</span></div>
     <div class="giving-hero__visual"><figure class="giving-hero__photo">{img("flagcard", "Young Stanford Park Sports players standing together with their coaches on a school field", eager=True)}</figure><div class="giving-hero__inset">{img("giving-together", "Young athletes and coaches smiling together outdoors", sizes="240px")}</div><span class="giving-hero__seal">{icon("heart")}<span>One community.<br>More kids playing.</span></span></div>
   </div>
 
