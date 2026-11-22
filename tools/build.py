@@ -222,7 +222,7 @@ def head(title, desc, page):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v={"20261121photos" if page == "help-more-kids-play.html" else "20261109"}">
+<link rel="stylesheet" href="assets/css/styles.css?v={"20261121swap" if page == "help-more-kids-play.html" else "20261109"}">
 </head>
 <body data-page="{page}">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -1241,7 +1241,7 @@ def help_more_kids_play():
 <section class="giving-hero" aria-labelledby="giving-title">
   <div class="container giving-hero__grid">
     <div class="giving-hero__copy"><span class="eyebrow">Stanford Park Sports Foundation</span><h1 class="display" id="giving-title">Help more<br><span>kids play.</span></h1><p class="giving-hero__lead">The joy your child found in sports.<br>A chance to share it with another family.</p><p>Your gift helps bring coaching, connection, and confidence to children from low-income families through scholarships and free sports programs.</p><a class="btn" href="#give">Give the gift of play {icon("heart")}</a><span class="giving-trust">{icon("shield")} A registered 501(c)(3) nonprofit · EIN {EIN}</span></div>
-    <div class="giving-hero__visual"><figure class="giving-hero__photo">{img("flagcard", "Young Stanford Park Sports players standing together with their coaches on a school field", eager=True)}</figure><div class="giving-hero__inset">{img("giving-joy", "A coach and young athletes enjoying a joyful moment in the gym", sizes="240px")}</div><span class="giving-hero__seal">{icon("heart")}<span>One community.<br>More kids playing.</span></span></div>
+    <div class="giving-hero__visual"><figure class="giving-hero__photo">{img("flagcard", "Young Stanford Park Sports players standing together with their coaches on a school field", eager=True)}</figure><div class="giving-hero__inset">{img("giving-together", "Young athletes and coaches smiling together outdoors", sizes="240px")}</div><span class="giving-hero__seal">{icon("heart")}<span>One community.<br>More kids playing.</span></span></div>
   </div>
 </section>
 <div class="giving-ribbon"><div class="container"><span>More confidence.</span><span>More connection.</span><span>More chances to play.</span></div></div>
@@ -1256,7 +1256,7 @@ def help_more_kids_play():
 </div></div></section>
 <section class="section giving-community" aria-labelledby="giving-community-title"><div class="container giving-community__grid"><div class="giving-community__photos">{img("giving-banner", "Young athletes and coaches gathered behind a Stanford Park Youth Sports banner on an outdoor court")}</div><div><span class="eyebrow">One community. More possibility.</span><h2 id="giving-community-title" class="display h-lg">Every child<br>deserves <span class="outline">a chance.</span></h2><p class="lede">To be part of a team. To try something new. To have someone cheering them on.</p><p>We’re building on the community our school and academy families already know—so more children can experience the confidence and connection that come from playing together.</p></div></div></section>
 <section class="section giving-moments" aria-labelledby="giving-moments-title"><div class="container"><div class="section-head"><span class="eyebrow">The people behind the play</span><h2 class="display h-lg" id="giving-moments-title">Real people.<br><span class="outline">A shared purpose.</span></h2></div><div class="giving-moments__grid">
-<figure>{img("giving-together", "Young athletes and coaches smiling together outdoors")}<figcaption>Learning, playing, and growing together.</figcaption></figure>
+<figure>{img("giving-joy", "A coach and young athletes enjoying a joyful moment in the gym")}<figcaption>Learning, playing, and growing together.</figcaption></figure>
 <figure>{img("giving-academy", "SPS Academy basketball players and coaches together beside the Stanford Park Sports bus")}<figcaption>Confidence that grows with every practice.</figcaption></figure>
 <figure>{img("giving-coaching-team", "Five Stanford Park Sports coaches together on a school court")}<figcaption>Caring coaches. A shared purpose.</figcaption></figure>
 </div></div></section>
