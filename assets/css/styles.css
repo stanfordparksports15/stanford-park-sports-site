@@ -1579,3 +1579,12 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
 .giving-ribbon.is-paused .giving-ribbon__track { animation-play-state: paused; }
 .giving-ribbon__pause { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); border: 1px solid #ffffff80; border-radius: 5px; color: white; background: var(--maroon); font: inherit; font-size: .875rem; padding: 9px 7px; cursor: pointer; }
 @media (prefers-reduced-motion: reduce) { .giving-ribbon__pause { display: none; } .giving-ribbon--moving { padding-right: 0; } }
+
+.giving-impact .giving-impact__amount { color: var(--maroon); font-size: 1.25rem; font-weight: 800; margin-bottom: 14px; }
+
+.giving-equipment { margin-top: 28px; padding: 28px; background: var(--maroon); color: white; border-radius: 16px; display: grid; grid-template-columns: 1fr 1.2fr auto; gap: 24px; align-items: center; }
+.giving-equipment > div { display: flex; align-items: center; gap: 14px; font-size: 1.2rem; }
+.giving-equipment svg { width: 28px; height: 28px; flex: none; }
+.giving-impact .giving-equipment p { color: #fff; }
+.giving-equipment .btn { background: var(--cream); color: var(--maroon); }
+@media (max-width: 960px) { .giving-equipment { grid-template-columns: 1fr; gap: 20px; } .giving-equipment .btn { justify-self: start; } }
