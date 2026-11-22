@@ -76,7 +76,8 @@ def img(n, alt, sizes="(max-width: 960px) 100vw, 50vw", eager=False, cls="", ext
 
 
 # ---------------------------------------------------------------- data
-DONATE_URL = "https://donorbox.org/stanford-park-sports-foundation"
+DONORBOX_URL = "https://donorbox.org/stanford-park-sports-foundation"
+DONATE_URL = "https://stanfordparksports.com/help-more-kids-play"
 EIN = "33-2148759"
 SITE_URL = "https://www.stanfordparksports.com"
 # Where the Wix registration pages live after the domain moves (Petr's free Wix URL, no trailing slash)
@@ -240,7 +241,7 @@ def header(page):
     <a class="brand" href="index.html" aria-label="Stanford Park Youth Sports home"><img src="assets/img/logo.png" alt="Stanford Park Youth Sports" width="640" height="184"></a>
     <nav class="nav-links" aria-label="Main">{links}</nav>
     <div class="nav-cta">
-      <a class="btn btn--sm nav-donate" href="donate.html">{icon("heart")} Donate</a>
+      <a class="btn btn--sm nav-donate" href="{DONATE_URL}">{icon("heart")} Donate</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span></button>
     </div>
   </div>
@@ -271,7 +272,7 @@ def footer():
           <li><a href="programs.html">Current programs</a></li>
           <li><a href="schools.html">For schools</a></li>
           <li><a href="get-involved.html">Get involved</a></li>
-          <li><a href="donate.html">Donate</a></li>
+          <li><a href="{DONATE_URL}">Donate</a></li>
         </ul>
       </div>
       <div>
@@ -360,7 +361,7 @@ def foundation_section():
           <li>{icon("check", sw=3)} Gifts fund coaching, equipment and programs in underserved communities</li>
         </ul>
         <div class="btn-row">
-          <a class="btn" href="{DONATE_URL}" target="_blank" rel="noopener">Donate now {icon("heart")}</a>
+          <a class="btn" href="{DONATE_URL}">Donate now {icon("heart")}</a>
           <a class="btn btn--ghost" href="donate.html">About the Foundation</a>
         </div>
       </div>
@@ -382,7 +383,7 @@ def donate_band():
       <div class="donate-band__side">
         <span class="pill-note">{icon("shield")} <span>501(c)(3) nonprofit · Tax-deductible<span class="np-ein"><span class="np-sep"> · </span>EIN {EIN}</span></span></span>
         <div class="btn-row">
-          <a class="btn btn--cream" href="{DONATE_URL}" target="_blank" rel="noopener">Donate now {icon("heart")}</a>
+          <a class="btn btn--cream" href="{DONATE_URL}">Donate now {icon("heart")}</a>
           <a class="btn btn--outline-cream" href="donate.html">Ways to give</a>
         </div>
       </div>
@@ -967,9 +968,9 @@ def donate():
              ("$250", "A full semester", "Covers one student\u2019s full semester of school-based programming."),
              ("$2,500", "An academy season", "A season of professional training for a group of students."),
              ("$5,000", "A new school", "Launches a brand-new program at a school that needs one.")]
-    tier_html = "".join(f'''<a class="tier reveal" href="{DONATE_URL}" target="_blank" rel="noopener">
+    tier_html = "".join(f'''<a class="tier reveal" href="{DONATE_URL}">
         <span class="tier__amt">{a}</span><h3>{t}</h3><p>{d}</p><span class="tier__cta">Give {a} {ARROW}</span></a>''' for a, t, d in tiers)
-    ways = [("heart", "Give online", "One-time or monthly, by card or bank, through our secure Donorbox page.", f'<a class="btn btn--sm" href="{DONATE_URL}" target="_blank" rel="noopener">Donate now {icon("external")}</a>'),
+    ways = [("heart", "Give online", "One-time or monthly, by card or bank, through our secure Donorbox page.", f'<a class="btn btn--sm" href="{DONATE_URL}">Donate now {icon("external")}</a>'),
             ("send", "Bank transfer", "ACH or wire transfer. Email us and we\u2019ll send instructions.", f'<a class="btn btn--sm btn--ghost" href="mailto:{EMAIL}?subject=Bank%20transfer%20donation">Email us</a>'),
             ("mail", "Mail a check", f"Payable to Stanford Park Sports Foundation, {ADDRESS}.", ""),
             ("users", "Sponsor a program", "Sponsor a child, a team or a whole school program, or fund scholarships for underserved youth.", f'<a class="btn btn--sm btn--ghost" href="mailto:{EMAIL}?subject=Sponsorship">Talk to us</a>'),
@@ -983,7 +984,7 @@ def donate():
 {page_hero("Foundation", [("Give kids", False), ("the game", True)],
             f"Stanford Park Sports is run by the Stanford Park Sports Foundation, a registered 501(c)(3) nonprofit (EIN {EIN}). Your tax-deductible gift helps make sure every child can play.",
             "i3476", "Three smiling girls in Stanford Park Sports Foundation shirts",
-            f'<a class="btn" href="{DONATE_URL}" target="_blank" rel="noopener">Donate now {icon("heart")}</a><a class="btn btn--ghost" href="#ways">Other ways to give</a>')}
+            f'<a class="btn" href="{DONATE_URL}">Donate now {icon("heart")}</a><a class="btn btn--ghost" href="#ways">Other ways to give</a>')}
 
 <section class="section" aria-labelledby="tiers-title" style="padding-top:clamp(24px,4vw,48px)">
   <div class="container">
@@ -1043,7 +1044,7 @@ def donate():
         <li>{icon("check", sw=3)} Scholarships and free programs for families who need them</li>
         <li>{icon("check", sw=3)} Expanding to more schools serving under-resourced kids</li>
       </ul>
-      <div class="btn-row reveal"><a class="btn" href="{DONATE_URL}" target="_blank" rel="noopener">Donate to the Foundation {icon("external")}</a></div>
+      <div class="btn-row reveal"><a class="btn" href="{DONATE_URL}">Donate to the Foundation {icon("external")}</a></div>
     </div>
   </div>
 </section>
@@ -1255,7 +1256,7 @@ def help_more_kids_play():
 {img("giving-team", "Foundation soccer players together on a school field", sizes="(max-width: 600px) 45vw, 20vw")}
 {img("giving-bus", "Young athletes gathered beside the Stanford Park Sports bus", sizes="(max-width: 600px) 45vw, 20vw")}
 </div></section>
-<section class="section giving-form-section" id="give" aria-labelledby="giving-form-title"><div class="container giving-form-grid"><div class="giving-form-copy"><span class="eyebrow">Give a child a chance to play</span><h2 class="display h-lg" id="giving-form-title">Small act.<br><span class="outline">Lasting impact.</span></h2><p class="lede">Help a child find their team. Choose a one-time gift or make a difference every month.</p><p>We’ve already supported hundreds of children. Your gift helps bring professional coaching, quality training, and mentorship to more schools serving low-income families.</p><div class="giving-form-benefits"><span>{icon("check")} Scholarships for families</span><span>{icon("check")} Caring coaches and equipment</span><span>{icon("check")} Free sports in more schools</span></div><span class="giving-trust">{icon("shield")} Secure giving through Donorbox</span><aside class="giving-other-compact" aria-labelledby="giving-other-title"><h3 id="giving-other-title">Other ways to give</h3><div><h4>{icon("mail")} Mail a check</h4><p>Payable to <strong>Stanford Park Sports Foundation INC</strong><br>825 Live Oak Ave, Unit E<br>Menlo Park, CA 94025</p></div><div><h4>{icon("shield")} Bank transfer</h4><p><a href="mailto:{EMAIL}?subject=Bank%20transfer%20donation">Email us for transfer instructions</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p></div></aside></div><div class="giving-form-panel"><script src="https://donorbox.org/widget.js" async></script><iframe src="https://donorbox.org/embed/stanford-park-sports-foundation" name="donorbox" title="Donate to Stanford Park Sports Foundation" allow="payment" allowpaymentrequest height="900" width="100%" style="border:0;max-width:500px;min-width:250px;max-height:none" loading="eager"></iframe><p class="giving-form-fallback">Having trouble with the form? <a href="{DONATE_URL}" target="_blank" rel="noopener noreferrer">Open our donation page<span class="sr-only"> in a new tab</span></a>.</p></div></div></section>
+<section class="section giving-form-section" id="give" aria-labelledby="giving-form-title"><div class="container giving-form-grid"><div class="giving-form-copy"><span class="eyebrow">Give a child a chance to play</span><h2 class="display h-lg" id="giving-form-title">Small act.<br><span class="outline">Lasting impact.</span></h2><p class="lede">Help a child find their team. Choose a one-time gift or make a difference every month.</p><p>We’ve already supported hundreds of children. Your gift helps bring professional coaching, quality training, and mentorship to more schools serving low-income families.</p><div class="giving-form-benefits"><span>{icon("check")} Scholarships for families</span><span>{icon("check")} Caring coaches and equipment</span><span>{icon("check")} Free sports in more schools</span></div><span class="giving-trust">{icon("shield")} Secure giving through Donorbox</span><aside class="giving-other-compact" aria-labelledby="giving-other-title"><h3 id="giving-other-title">Other ways to give</h3><div><h4>{icon("mail")} Mail a check</h4><p>Payable to <strong>Stanford Park Sports Foundation INC</strong><br>825 Live Oak Ave, Unit E<br>Menlo Park, CA 94025</p></div><div><h4>{icon("shield")} Bank transfer</h4><p><a href="mailto:{EMAIL}?subject=Bank%20transfer%20donation">Email us for transfer instructions</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p></div></aside></div><div class="giving-form-panel"><script src="https://donorbox.org/widget.js" async></script><iframe src="https://donorbox.org/embed/stanford-park-sports-foundation" name="donorbox" title="Donate to Stanford Park Sports Foundation" allow="payment" allowpaymentrequest height="900" width="100%" style="border:0;max-width:500px;min-width:250px;max-height:none" loading="eager"></iframe><p class="giving-form-fallback">Having trouble with the form? <a href="{DONORBOX_URL}" target="_blank" rel="noopener noreferrer">Open our donation page<span class="sr-only"> in a new tab</span></a>.</p></div></div></section>
 
 <section class="section giving-letter" aria-labelledby="giving-families">
   <div class="container giving-letter__grid"><div><span class="eyebrow">To our SPS families</span><h2 id="giving-families" class="display h-lg">You know<br><span class="outline">that feeling.</span></h2><figure class="giving-letter__photo">{img("giving-mentorship", "SPS Academy coaches mentoring young basketball players in a gym", sizes="(max-width: 960px) 100vw, 40vw")}</figure></div><div class="giving-prose"><p class="lede">The excitement before practice. The pride after learning something new. The friendships that last beyond the final whistle.</p><p>Whether your family joined us through a school program or SPS Academy, you’re part of the Stanford Park Sports community. You’ve seen how much a caring coach and a chance to play can mean to a child.</p><p>For some families, program fees put that experience out of reach. We want more children to have the same opportunity to move, grow, and belong—regardless of what their family can afford.</p><p>Families have shared how much they appreciate what our coaches do for their children. That encouragement drives our work. If SPS has made a difference for your child, please help us share that experience with another family.</p><p class="giving-signoff">Thank you for being part of our community.<br><strong>The Stanford Park Sports team</strong></p></div></div>
