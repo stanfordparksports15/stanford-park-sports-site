@@ -1610,3 +1610,5 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
 
 .giving-scroll-band { background: var(--cream); padding: 28px 20px 0; }
 .giving-scroll-band .giving-scroll-cue { margin: 0 auto; }
+
+.giving-hero__inset img[src*="giving-together"] { transform: scale(1.25); transform-origin: 58% 56%; }
