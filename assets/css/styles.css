@@ -1654,3 +1654,5 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
  .giving-form-panel { order: 1; }
  .giving-other-compact { order: 2; }
 }
+
+#payment { scroll-margin-top: 100px; }
