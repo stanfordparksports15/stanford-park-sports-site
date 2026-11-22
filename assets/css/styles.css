@@ -1641,3 +1641,16 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
 
 @media (min-width: 961px) { .giving-hero h1 { font-size: clamp(3.5rem,6.6vw,6.7rem); } }
 @media (max-width: 960px) { .giving-hero h1 { font-size: clamp(2rem,9vw,5rem); } }
+
+/* Keep alternative giving below the form on phones, beside it on desktop. */
+@media (min-width: 961px) {
+ .giving-form-grid { align-items: start; column-gap: 80px; row-gap: 28px; }
+ .giving-form-copy { grid-column: 1; grid-row: 1; }
+ .giving-form-panel { grid-column: 2; grid-row: 1 / span 2; }
+ .giving-other-compact { grid-column: 1; grid-row: 2; }
+}
+@media (max-width: 960px) {
+ .giving-form-copy { order: 0; }
+ .giving-form-panel { order: 1; }
+ .giving-other-compact { order: 2; }
+}
