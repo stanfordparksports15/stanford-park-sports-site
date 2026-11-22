@@ -1612,3 +1612,7 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
 .giving-scroll-band .giving-scroll-cue { margin: 0 auto; }
 
 .giving-hero__inset img[src*="giving-together"] { transform: scale(1.25); transform-origin: 58% 56%; }
+
+/* Keep each campaign headline phrase on its own line. */
+.giving-hero h1 { font-size: clamp(2rem,4.45vw,4.6rem); white-space: nowrap; letter-spacing: -.025em; line-height: 1.12; }
+@media (max-width: 960px) { .giving-hero h1 { font-size: clamp(1.65rem,7.7vw,4.6rem); } }
