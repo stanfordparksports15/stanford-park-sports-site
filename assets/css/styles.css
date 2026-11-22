@@ -1607,3 +1607,6 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
 .giving-scroll-cue:hover svg { transform: translateY(4px); box-shadow: 0 12px 30px #8e13164d; }
 @keyframes giving-ring { from { transform: scale(1); opacity: .7; } to { transform: scale(1.55); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .giving-scroll-cue svg, .giving-scroll-cue::after { animation: none; } .giving-scroll-cue::after { display: none; } }
+
+.giving-scroll-band { background: var(--cream); padding: 28px 20px 0; }
+.giving-scroll-band .giving-scroll-cue { margin: 0 auto; }
