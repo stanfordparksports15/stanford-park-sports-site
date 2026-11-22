@@ -1559,3 +1559,23 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
  .giving-photo-strip__grid { grid-template-columns: repeat(5, minmax(150px,1fr)); overflow-x: auto; padding-bottom: 12px; scroll-snap-type: x proximity; }
  .giving-photo-strip img { height: 125px; scroll-snap-align: start; }
 }
+
+/* Gentle campaign marquee; pause on hover and honor reduced motion. */
+.giving-ribbon--moving { overflow: hidden; }
+.giving-ribbon__track { display: flex; width: max-content; animation: giving-messages 45s linear infinite; }
+.giving-ribbon__group { display: flex; flex: none; align-items: center; gap: 0; }
+.giving-ribbon__group span { display: flex; align-items: center; white-space: nowrap; padding-block: 24px; font-family: var(--font-display); text-transform: uppercase; font-size: clamp(1rem,1.8vw,1.5rem); }
+.giving-ribbon__group span::after { content: '✦'; margin-inline: 38px; color: #efb9b3; font-size: 1rem; }
+.giving-ribbon--moving:hover .giving-ribbon__track { animation-play-state: paused; }
+@keyframes giving-messages { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+ .giving-ribbon__track { animation: none; width: 100%; }
+ .giving-ribbon__group { flex-wrap: wrap; justify-content: center; width: 100%; padding: 12px 20px; gap: 12px 24px; }
+ .giving-ribbon__group span { white-space: normal; padding: 0; font-size: 1rem; }
+ .giving-ribbon__group span::after, .giving-ribbon__group + .giving-ribbon__group { display: none; }
+}
+
+.giving-ribbon--moving { position: relative; padding-right: 68px; }
+.giving-ribbon.is-paused .giving-ribbon__track { animation-play-state: paused; }
+.giving-ribbon__pause { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); border: 1px solid #ffffff80; border-radius: 5px; color: white; background: var(--maroon); font: inherit; font-size: .875rem; padding: 9px 7px; cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { .giving-ribbon__pause { display: none; } .giving-ribbon--moving { padding-right: 0; } }
