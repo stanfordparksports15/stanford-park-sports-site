@@ -222,7 +222,7 @@ def head(title, desc, page):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v={"20261121swap" if page == "help-more-kids-play.html" else "20261109"}">
+<link rel="stylesheet" href="assets/css/styles.css?v={"20261121strip" if page == "help-more-kids-play.html" else "20261109"}">
 </head>
 <body data-page="{page}">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -1245,6 +1245,13 @@ def help_more_kids_play():
   </div>
 </section>
 <div class="giving-ribbon"><div class="container"><span>More confidence.</span><span>More connection.</span><span>More chances to play.</span></div></div>
+<section class="giving-photo-strip" aria-label="More moments from our sports community"><div class="container giving-photo-strip__grid">
+{img("giving-community-extra", "Children and coaches enjoying time together on the field", sizes="(max-width: 600px) 45vw, 20vw")}
+{img("giving-court", "Young athletes and coaches together on an outdoor school court", sizes="(max-width: 600px) 45vw, 20vw")}
+{img("giving-jaxon", "Young athletes visiting a basketball arena together", sizes="(max-width: 600px) 45vw, 20vw")}
+{img("giving-team", "Foundation soccer players together on a school field", sizes="(max-width: 600px) 45vw, 20vw")}
+{img("giving-bus", "Young athletes gathered beside the Stanford Park Sports bus", sizes="(max-width: 600px) 45vw, 20vw")}
+</div></section>
 <section class="section giving-form-section" id="give" aria-labelledby="giving-form-title"><div class="container giving-form-grid"><div class="giving-form-copy"><span class="eyebrow">Give a child a chance to play</span><h2 class="display h-lg" id="giving-form-title">Small act.<br><span class="outline">Lasting impact.</span></h2><p class="lede">Help a child find their team. Choose a one-time gift or make a difference every month.</p><p>Your support helps provide scholarships, caring coaches, and free sports programs for more children.</p><div class="giving-form-benefits"><span>{icon("check")} Scholarships for families</span><span>{icon("check")} Caring coaches and equipment</span><span>{icon("check")} Free sports in more schools</span></div><span class="giving-trust">{icon("shield")} Secure giving through Donorbox</span></div><div class="giving-form-panel"><script src="https://donorbox.org/widget.js" async></script><iframe src="https://donorbox.org/embed/stanford-park-sports-foundation" name="donorbox" title="Donate to Stanford Park Sports Foundation" allow="payment" allowpaymentrequest height="900" width="100%" style="border:0;max-width:500px;min-width:250px;max-height:none" loading="eager"></iframe><p class="giving-form-fallback">Having trouble with the form? <a href="{DONATE_URL}" target="_blank" rel="noopener noreferrer">Open our donation page<span class="sr-only"> in a new tab</span></a>.</p></div></div></section>
 <section class="section giving-letter" aria-labelledby="giving-families">
   <div class="container giving-letter__grid"><div><span class="eyebrow">To our SPS families</span><h2 id="giving-families" class="display h-lg">You know<br><span class="outline">that feeling.</span></h2></div><div class="giving-prose"><p class="lede">The excitement before practice. The pride after learning something new. The friendships that last beyond the final whistle.</p><p>Whether your family joined us through a school program or SPS Academy, you’re part of the Stanford Park Sports community. You’ve seen how much a caring coach and a chance to play can mean to a child.</p><p>For some families, program fees put that experience out of reach. We want more children to have the same opportunity to move, grow, and belong—regardless of what their family can afford.</p><p>If SPS has made a difference for your child, please consider helping us share that experience with another family. A gift of any size can help us expand access to sports.</p><p class="giving-signoff">Thank you for being part of our community.<br><strong>The Stanford Park Sports team</strong></p></div></div>
