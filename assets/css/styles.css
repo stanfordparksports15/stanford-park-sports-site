@@ -1588,3 +1588,6 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
 .giving-impact .giving-equipment p { color: #fff; }
 .giving-equipment .btn { background: var(--cream); color: var(--maroon); }
 @media (max-width: 960px) { .giving-equipment { grid-template-columns: 1fr; gap: 20px; } .giving-equipment .btn { justify-self: start; } }
+
+.giving-letter__photo { margin: 32px 0 0; border-radius: 16px; overflow: hidden; }
+.giving-letter__photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
