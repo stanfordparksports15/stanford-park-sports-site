@@ -1599,3 +1599,11 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
 @keyframes giving-nudge { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
 @media (max-width: 960px) { .giving-scroll-cue { margin: 32px auto -20px; } }
 @media (prefers-reduced-motion: reduce) { .giving-scroll-cue svg { animation: none; } }
+
+/* A bold donation cue with a soft expanding ring. */
+.giving-scroll-cue { position: relative; gap: 14px; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; }
+.giving-scroll-cue svg { width: 60px; height: 60px; padding: 17px; background: var(--maroon); color: white; border: 0; box-shadow: 0 8px 24px #8e13162b; animation: giving-nudge 2s ease-in-out 2; transition: transform .2s, box-shadow .2s; }
+.giving-scroll-cue::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 60px; height: 60px; margin-left: -30px; border-radius: 50%; border: 1px solid #8e131660; pointer-events: none; animation: giving-ring 2s ease-out 2; }
+.giving-scroll-cue:hover svg { transform: translateY(4px); box-shadow: 0 12px 30px #8e13164d; }
+@keyframes giving-ring { from { transform: scale(1); opacity: .7; } to { transform: scale(1.55); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .giving-scroll-cue svg, .giving-scroll-cue::after { animation: none; } .giving-scroll-cue::after { display: none; } }

@@ -222,7 +222,7 @@ def head(title, desc, page):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v={"20261121scroll" if page == "help-more-kids-play.html" else "20261109"}">
+<link rel="stylesheet" href="assets/css/styles.css?v={"20261121arrow" if page == "help-more-kids-play.html" else "20261109"}">
 </head>
 <body data-page="{page}">
 <a class="skip-link" href="#main">Skip to content</a>
