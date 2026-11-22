@@ -222,7 +222,7 @@ def head(title, desc, page):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v={"20261121order" if page == "help-more-kids-play.html" else "20261109"}">
+<link rel="stylesheet" href="assets/css/styles.css?v={"20261121final" if page == "help-more-kids-play.html" else "20261109"}">
 </head>
 <body data-page="{page}">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -1244,9 +1244,10 @@ def help_more_kids_play():
     <div class="giving-hero__visual"><figure class="giving-hero__photo">{img("flagcard", "Young Stanford Park Sports players standing together with their coaches on a school field", eager=True)}</figure><div class="giving-hero__inset">{img("giving-together", "Young athletes and coaches smiling together outdoors", sizes="240px")}</div><span class="giving-hero__seal">{icon("heart")}<span>One community.<br>More kids playing.</span></span></div>
   </div>
 
+<a class="giving-scroll-cue" href="#give"><span>Make a difference below</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v17M5 13l7 7 7-7"/></svg></a>
 </section>
 <div class="giving-ribbon giving-ribbon--moving" role="region" aria-label="More confidence. More connection. More chances to play. Every child belongs. Stronger together. Big dreams start here. Give the gift of play."><div class="giving-ribbon__track" aria-hidden="true"><div class="giving-ribbon__group"><span>More confidence.</span><span>More connection.</span><span>More chances to play.</span><span>Every child belongs.</span><span>Stronger together.</span><span>Big dreams start here.</span><span>Give the gift of play.</span></div><div class="giving-ribbon__group"><span>More confidence.</span><span>More connection.</span><span>More chances to play.</span><span>Every child belongs.</span><span>Stronger together.</span><span>Big dreams start here.</span><span>Give the gift of play.</span></div></div><button class="giving-ribbon__pause" type="button" aria-label="Pause moving messages" aria-pressed="false" onclick="const paused=this.parentElement.classList.toggle('is-paused');this.setAttribute('aria-pressed',String(paused));this.setAttribute('aria-label',paused?'Play moving messages':'Pause moving messages');this.textContent=paused?'Play':'Pause'">Pause</button></div>
-<div class="giving-scroll-band"><a class="giving-scroll-cue" href="#give"><span>Make a difference below</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v17M5 13l7 7 7-7"/></svg></a></div>
+
 <section class="giving-photo-strip" aria-label="More moments from our sports community"><div class="container giving-photo-strip__grid">
 {img("giving-community-extra", "Children and coaches enjoying time together on the field", sizes="(max-width: 600px) 45vw, 20vw")}
 {img("giving-court", "Young athletes and coaches together on an outdoor school court", sizes="(max-width: 600px) 45vw, 20vw")}
