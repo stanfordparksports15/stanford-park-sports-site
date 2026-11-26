@@ -223,7 +223,7 @@ def head(title, desc, page):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v={"20261121payment" if page == "help-more-kids-play.html" else "20261109"}">
+<link rel="stylesheet" href="assets/css/styles.css?v={"20261126training" if page in ("index.html", "private-group-training.html") else ("20261121payment" if page == "help-more-kids-play.html" else "20261109")}">
 </head>
 <body data-page="{page}">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -300,7 +300,7 @@ def footer():
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=20261109" defer></script>
+<script src="assets/js/site.js?v=20261126" defer></script>
 </body>
 </html>
 '''
@@ -518,11 +518,12 @@ def home():
         <span class="line"><span>We do more than <em>coach.</em></span></span>
         <span class="line"><span>We build <em>character.</em></span></span>
       </h1>
-      <p class="lede fade-up d1">Professional after-school, PE, recess, before-school and camp sports programs for Bay Area schools. School programs are all we do, run on your campus by our own trained coaches.</p>
+      <p class="lede fade-up d1">Professional school sports programs and private group training for Bay Area families. Our experienced coaches bring high-quality instruction, skill development, and character-building to a wide range of sports.</p>
       <div class="btn-row fade-up d2">
         <a class="btn" href="contact.html">Partner with us {ARROW}</a>
         <a class="btn btn--ghost" href="programs.html">Current programs {ARROW}</a>
       </div>
+      <div class="hero-private fade-up d2"><a class="btn btn--ghost" href="private-group-training.html">Private group training</a></div>
     </div>
 
     <div class="collage" aria-label="Photos from our programs">
@@ -1236,6 +1237,18 @@ def athletic_performance():
     write("academy/athletic-performance/index.html", head("SPS Performance Club | Stanford Park Sports", "Speed, strength, agility and conditioning for athletes ages 5–14. A 10-week youth development program led by Coach Bryce in the Menlo Park / Palo Alto area.", page) + header(page) + body + footer())
 
 
+def private_group_training():
+    page = "private-group-training.html"
+    sport_cards = "".join(f'<article>{icon(key)}<h3>{"Running club" if key == "run" else name}</h3><p>{description}</p></article>' for key,name,description in SPORTS if key != "football")
+    body = f'''<main id="main" class="private-training">
+<section class="pt-hero"><div class="container pt-split"><div><span class="eyebrow">Your group. Your goals.</span><h1 class="display">Private group<br><span>training.</span></h1><p class="lede">Bring your group. We’ll bring the coaching.</p><p>Professional coaching across a wide range of sports, built around your group’s interests, experience, and goals. Small groups typically include 6–20 kids—friends, classmates, or teammates training together with a professional coach. Sessions combine focused instruction, skill development, and plenty of time to play.</p><a class="btn" href="#training-inquiry">Request group training</a></div><figure>{img("performanceclub-hero", "An SPS coach guiding young athletes through an exercise in the gym", eager=True)}</figure></div></section>
+<section class="section"><div class="container pt-split"><div><span class="eyebrow">More personal. More purposeful.</span><h2 class="display h-lg">Great coaching.<br><span class="outline">Your way.</span></h2></div><div class="pt-benefits"><article><h3>Coaching with a purpose</h3><p>Experienced coaches help athletes build fundamentals, improve technique, and develop confidence through clear instruction and encouragement.</p></article><article><h3>What is small-group training?</h3><p>Small groups typically bring together 6–20 friends or classmates who want to get ready for a school sports season, develop their skills, or simply have fun together. Professional coaching is shaped around the group’s ages, experience, and goals.</p></article><article><h3>We handle the arrangements</h3><p>We provide professional coaches and take care of family enrollment, payments, and the training location. Share your group’s sport, ages, and availability, and we’ll help organize the details.</p></article></div></div></section>
+<section class="section pt-sports"><div class="container"><span class="eyebrow">Find your sport</span><h2 class="display h-lg">One group.<br><span class="outline">So many possibilities.</span></h2><p class="lede">Choose a sport to focus on or ask about a multi-sport experience.</p><div class="pt-sport-grid">{sport_cards}</div><p class="pt-note">Have another sport in mind? Ask us about coaching availability for your group.</p></div></section>
+<section class="section" id="training-inquiry"><div class="container pt-split"><figure>{img("giving-banner", "SPS athletes and coaches gathered on an outdoor sports court")}</figure><div><span class="eyebrow">Let’s build your training plan</span><h2 class="display h-lg">Tell us about<br><span class="outline">your group.</span></h2><p>Share your sport, the number and ages of participants, your goals, and your preferred schedule and location. Our team will follow up with availability, session options, and pricing. We’ll coordinate the professional coach, location, family enrollment, and payments.</p><p class="pt-note">Training details are confirmed with our team before booking.</p><form class="pt-inquiry" action="contact.html#form-title" method="get"><input type="hidden" name="role" value="Parent"><div class="field"><label for="pt-sport">What sport is your family looking for?</label><select id="pt-sport" name="training_sport" required><option value="">Choose a sport</option><option>Basketball</option><option>Soccer</option><option>Volleyball</option><option>Tennis</option><option>Running club</option><option>Cheerleading</option></select></div><div class="field"><label for="pt-size">How many kids are in your group? <span class="opt">(optional)</span></label><input id="pt-size" type="number" name="training_size" min="1" max="100" placeholder="Typically 6–20 kids"></div><button class="btn" type="submit">Continue your inquiry</button><p class="pt-note">Next, share your contact details and preferred schedule. This is an inquiry, not a booking.</p></form>
+<p class="pt-note">Or email <a href="mailto:{EMAIL}?subject=Private%20group%20training">{EMAIL}</a></p></div></div></section>
+</main>'''
+    write(page, head("Private Group Training | Stanford Park Sports", "Professional private group sports training for friends and teammates in the Bay Area. Explore sports and request a training plan for your group.", page) + header(page) + body + footer())
+
 # ================================================= FAMILY GIVING CAMPAIGN
 def help_more_kids_play():
     body = f'''<main id="main" class="giving-page">
@@ -1278,10 +1291,11 @@ def help_more_kids_play():
 
 # ---------------------------------------------------------------- launch files
 def launch_files():
-    pages = ["", "about.html", "programs.html", "schools.html", "get-involved.html", "donate.html", "contact.html", "academy/athletic-performance", "help-more-kids-play"]
+    pages = ["", "about.html", "programs.html", "schools.html", "get-involved.html", "donate.html", "contact.html", "academy/athletic-performance", "help-more-kids-play", "private-group-training"]
     redirects = f"""# Old Wix addresses (.org Foundation site + .com site) -> new pages (301 keeps Google rankings)
 /academy/athletic-performance /academy/athletic-performance/index.html 200
 /help-more-kids-play /help-more-kids-play.html 200
+/private-group-training /private-group-training.html 200
 /about-us            /about.html          301
 /coach               /get-involved.html#coach       301
 /copy-of-coach       /get-involved.html#volunteer   301
@@ -1314,5 +1328,5 @@ Sitemap: {SITE_URL}/sitemap.xml
 
 if __name__ == "__main__":
     favicon()
-    home(); about(); programs(); schools(); donate(); get_involved(); contact(); athletic_performance(); help_more_kids_play()
+    home(); about(); programs(); schools(); donate(); get_involved(); contact(); athletic_performance(); help_more_kids_play(); private_group_training()
     launch_files()

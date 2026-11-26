@@ -226,6 +226,14 @@
       var radio = form.querySelector('input[name="role"][value="' + wantRole.replace(/"/g, "") + '"]');
       if (radio) radio.checked = true;
     }
+    var trainingParams = new URLSearchParams(location.search);
+    var trainingSport = trainingParams.get("training_sport");
+    var trainingSports = ["Basketball", "Soccer", "Volleyball", "Tennis", "Running club", "Cheerleading"];
+    if (trainingSports.indexOf(trainingSport) !== -1) {
+      var trainingMessage = form.querySelector('[name="message"]');
+      var trainingSize = trainingParams.get("training_size");
+      if (trainingMessage && !trainingMessage.value) trainingMessage.value = "Private group training inquiry\nSport: " + trainingSport + (/^\d{1,3}$/.test(trainingSize || "") ? "\nGroup size: " + trainingSize + " kids" : "") + "\nParticipant ages: \nPreferred schedule and location: \nTraining goals: ";
+    }
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var ok = true, firstBad = null;
