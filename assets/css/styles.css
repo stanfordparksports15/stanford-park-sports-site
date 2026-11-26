@@ -1689,3 +1689,56 @@ section[aria-label="Ways to get involved"] + section[aria-labelledby="donate-tit
 .pt-inquiry { display: grid; gap: 20px; margin-top: 28px; }
 .pt-inquiry .btn { justify-self: start; }
 .pt-inquiry .pt-note { margin: 0; }
+
+/* Private training: athletic SPS editorial styling. */
+.private-training { overflow: hidden; }
+.pt-hero { position: relative; padding-bottom: 90px; }
+.pt-hero > svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .45; pointer-events: none; }
+.pt-hero .pt-split { position: relative; grid-template-columns: 1fr 1.06fr; gap: 72px; }
+.private-training .pt-hero h1 { font-size: clamp(4rem,7.5vw,7.6rem); font-style: italic; letter-spacing: -.025em; }
+.pt-hero .lede { font-weight: 700; }
+.private-training .pt-hero-proof { font-size: .95rem; padding-left: 16px; border-left: 3px solid var(--maroon); }
+.pt-collage { position: relative; padding: 0 0 60px 20px; }
+.private-training .pt-collage-main { border-radius: 120px 18px 18px 18px; border: 3px solid var(--maroon); }
+.private-training .pt-collage-main img { aspect-ratio: 1; }
+.private-training .pt-collage-inset { position: absolute; left: -18px; bottom: 8px; width: 43%; border-radius: 8px; padding: 10px 10px 0; background: white; transform: rotate(-7deg); box-shadow: 0 14px 32px #40101120; }
+.private-training .pt-collage-inset img { aspect-ratio: 4 / 3; border-radius: 4px; }
+.pt-collage-inset figcaption { font-family: var(--font-display); color: var(--maroon); padding: 10px 0; text-align: center; text-transform: uppercase; font-size: 1.3rem; }
+.pt-group-seal { position: absolute; right: -14px; bottom: 0; width: 150px; height: 150px; border-radius: 50%; background: var(--maroon); color: var(--cream); display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(7deg); box-shadow: 0 10px 24px #40101120; }
+.pt-group-seal strong { font-family: var(--font-display); font-size: 3.8rem; line-height: 1.15; }
+.pt-group-seal span { font-size: .85rem; font-weight: 800; text-transform: uppercase; }
+.pt-ribbon { background: var(--maroon); color: var(--cream); display: flex; justify-content: space-evenly; gap: 20px; padding: 24px var(--gutter); text-transform: uppercase; font-family: var(--font-display); font-size: clamp(1rem,1.8vw,1.5rem); }
+#training-inquiry { background: var(--cream); }
+#training-inquiry .pt-split { align-items: center; grid-template-columns: .9fr 1.1fr; gap: 48px; }
+#training-inquiry figure { border-radius: 18px; box-shadow: 8px 8px 0 var(--maroon); transform: rotate(-2deg); }
+#training-inquiry figure img { aspect-ratio: 4 / 5; object-position: center; }
+.pt-inquiry-card { padding: 36px; background: var(--paper); border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 15px 45px #40101109; }
+.private-training .pt-inquiry-card h2 { font-size: clamp(2.4rem,4vw,3.8rem); }
+.pt-inquiry-card .pt-note { margin: 14px 0; }
+.pt-inquiry .btn { width: 100%; }
+.pt-benefits { gap: 16px; }
+.pt-benefits article { border: 1px solid var(--line); border-left: 4px solid var(--maroon); padding: 24px; border-radius: 0 14px 14px 0; background: var(--cream); }
+.pt-benefits p { margin: 0; }
+.pt-sport-grid article { border: 2px solid var(--maroon); box-shadow: 5px 5px 0 var(--maroon); transition: transform .2s; }
+.pt-sport-grid article:nth-child(even) { border-color: var(--ink); box-shadow: 5px 5px 0 var(--ink); }
+.pt-sport-grid article:hover { transform: translateY(-3px); }
+.pt-finish { margin: 48px auto; max-width: 1320px; width: calc(100% - 2 * var(--gutter)); border-radius: 24px; background: var(--maroon); color: var(--cream); text-align: center; }
+.pt-finish .container { display: grid; justify-items: center; gap: 22px; }
+.pt-finish .eyebrow, .pt-finish h2 span { color: #f2c6c0; }
+.private-training .pt-finish p { color: var(--cream); max-width: 58ch; margin: 0; }
+@media (max-width: 960px) {
+ .pt-hero { padding-bottom: 50px; }
+ .pt-hero .pt-split, #training-inquiry .pt-split { grid-template-columns: 1fr; gap: 36px; }
+ .private-training .pt-hero h1 { font-size: clamp(3.5rem,13vw,5.5rem); }
+ .pt-collage { padding-left: 12px; max-width: 550px; margin-inline: auto; }
+ .private-training .pt-collage-main { border-top-left-radius: 80px; }
+ .private-training .pt-collage-inset { left: 0; width: 42%; }
+ .pt-group-seal { right: 0; width: 120px; height: 120px; }
+ .pt-group-seal strong { font-size: 3rem; }
+ .pt-group-seal span { font-size: .7rem; }
+ .pt-ribbon { flex-wrap: wrap; text-align: center; gap: 8px 24px; padding-block: 18px; }
+ #training-inquiry .pt-split > figure { display: none; }
+ .pt-inquiry-card { padding: 24px; }
+ .pt-finish { margin-block: 24px; }
+}
+@media (prefers-reduced-motion: reduce) { .pt-sport-grid article { transition: none; } }
